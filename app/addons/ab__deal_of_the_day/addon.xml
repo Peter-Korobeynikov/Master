@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+<id>ab__deal_of_the_day</id>
+<version>3.2.0</version>
+<hash>3f2cabdce647eb139b58f9f57107ed0e35d1d226, 2020-03-25 16:53:34</hash>
+<priority>2016</priority>
+<position>0</position>
+<status>active</status>
+<default_language>en</default_language>
+<authors>
+<author>
+<name>AlexBranding</name>
+<email>info@alexbranding.com</email>
+<url>https://alexbranding.com</url>
+</author>
+</authors>
+<supplier>AlexBranding</supplier>
+<supplier_link>https://cs-cart.alexbranding.com</supplier_link>
+<compatibility>
+<conflicts></conflicts>
+<dependencies></dependencies>
+<core_version><min>4.11.3</min></core_version>
+<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+</compatibility>
+<settings edition_type="ROOT,ULT:VENDOR">
+<sections>
+<section id="settings" edition_type="ROOT,ULT:VENDOR">
+<items>
+<item id="count_to">
+<type>selectbox</type>
+<default_value>day_end</default_value>
+<variants>
+<item id="end_of_the_day"></item>
+<item id="end_of_the_promotion"></item>
+</variants>
+</item>
+<item id="max_height">
+<type>input</type>
+<default_value>250</default_value>
+</item>
+<item id="promotions_per_page">
+<type>input</type>
+<default_value>12</default_value>
+</item>
+<item id="chains_per_page">
+<type>input</type>
+<default_value>3</default_value>
+</item>
+<item id="highlight_when_left">
+<type>selectbox</type>
+<default_value>1</default_value>
+<variants>
+<item id="0"></item>
+<item id="1"></item>
+<item id="2"></item>
+<item id="3"></item>
+<item id="4"></item>
+<item id="5"></item>
+<item id="6"></item>
+<item id="7"></item>
+</variants>
+</item>
+<item id="ab__show_promos">
+<type>checkbox</type>
+<default_value>N</default_value>
+</item>
+<item id="ab__show_expired_promos">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="ab__show_awaited_promos">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="ab__as">
+<type>header</type>
+</item>
+<item id="ab__as_add_to_sitemap">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="code"><type>hidden</type><default_value>ABA-h99791BAji3Y4DWi3Pxwr</default_value></item>
+<item id="build"><type>hidden</type><default_value>623</default_value></item>
+</items>
+</section>
+</sections>
+</settings>
+<functions>
+<item for="install">fn_ab__deal_of_the_day_install</item>
+<item for="uninstall">fn_ab__deal_of_the_day_uninstall</item>
+</functions>
+<queries>
+<item for="install">
+CREATE TABLE IF NOT EXISTS `?:ab__dotd` (
+`promotion_id` mediumint(8) UNSIGNED NOT NULL,
+`filter` char(1) NOT NULL DEFAULT 'N',
+`use_products_filter` char(1) NOT NULL DEFAULT 'Y',
+`hide_products_block` char(1) NOT NULL DEFAULT 'N',
+`use_schedule` char(1) NOT NULL DEFAULT 'N',
+`ab__dotd_schedule` text,
+PRIMARY KEY (`promotion_id`)
+) DEFAULT CHARSET=UTF8;
+</item>
+<item for="install">
+CREATE TABLE IF NOT EXISTS `?:ab__dotd_descriptions` (
+`promotion_id` mediumint(8) UNSIGNED NOT NULL,
+`h1` varchar(255) NOT NULL DEFAULT '',
+`page_title` varchar(255) NOT NULL DEFAULT '',
+`meta_description` varchar(255) NOT NULL DEFAULT '',
+`meta_keywords` varchar(255) NOT NULL DEFAULT '',
+`lang_code` char(2) NOT NULL DEFAULT '',
+PRIMARY KEY (`promotion_id`,`lang_code`)
+) DEFAULT CHARSET=UTF8;
+</item>
+<item for="install">
+CREATE TABLE IF NOT EXISTS `?:ab__dotd_periods` (
+`promotion_id` mediumint(8) UNSIGNED NOT NULL,
+`from_date` int(11) UNSIGNED NOT NULL DEFAULT 0,
+`to_date` int(11) UNSIGNED NOT NULL DEFAULT 0,
+PRIMARY KEY (`promotion_id`,`from_date`)
+) DEFAULT CHARSET=UTF8;
+</item>
+<item>REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__dotd_view_seodata', 'Y', 'ab__addons', 'ab__deal_of_the_day', 'Y')</item>
+<item>REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__dotd_manage_seodata', 'Y', 'ab__addons', 'ab__deal_of_the_day', 'N')</item>
+<item for="uninstall">DELETE FROM ?:privileges WHERE section_id = 'ab__deal_of_the_day' OR group_id = 'ab__deal_of_the_day'</item>
+</queries>
+</addon>

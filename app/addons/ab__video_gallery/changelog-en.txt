@@ -1,0 +1,52 @@
+v2.0.0 April 23, 2019
+------------------------------------------------------------------------
++ added connector for further updates;
++ added link to addon settings into the site menu;
++ added functional and settings of the "AB: Vertical gallery" addon;
+
+
+v1.8 September 20, 2018
+------------------------------------------------------------------------
++ added videos import/export;
+
+
+v1.7 August 23, 2018
+------------------------------------------------------------------------
++ added compatibility with Responsive;
+! fixed displaying of a large number of gallery elements in the tab;
+
+
+v1.6 July 12, 2018
+------------------------------------------------------------------------
++ added compatibility with cs-cart 4.8.x;
+! fixed bug with using a images gallery on the product's page;
+
+
+v1.5 May 23, 2018
+------------------------------------------------------------------------
+! fixed bug with play/pause video when preview a product;
+
+
+v1.4 February 8, 2018
+------------------------------------------------------------------------
++ allowed managing video-gallery for vendors;
+
+
+v1.3 December 22, 2017
+------------------------------------------------------------------------
++ added setting "Enable video control panel";
++ added setting "Enable video repeating";
+
+
+v1.2 October 30, 2017
+------------------------------------------------------------------------
+~ in the gallery, always displays the icon "YouTube button", in other places: video snapshot or manual icon;
+~ the field "YouTube video ID" has become multilingual, for different languages you can add different videos;
+! fixed bug with columns of mini-thumbnails in the gallery (youpitheme);
+
+
+v1.1 October 26, 2017
+------------------------------------------------------------------------
++ optimized icons "Video snapshot";
++ added changelog;
+! fixed bug with multilanguage data;

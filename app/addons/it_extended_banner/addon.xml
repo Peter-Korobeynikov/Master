@@ -1,0 +1,38 @@
+﻿<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>it_extended_banner</id>
+    <version>1.0</version>
+    <priority>3800</priority>
+    <position>150</position>
+    <status>active</status>
+    <default_language>ru</default_language>
+	<compatibility>
+		<dependencies>banners</dependencies>
+    </compatibility>
+	
+	<authors>
+        <author>
+            <name>Internettraffic.ru</name>
+            <email>office@internettraffic.ru</email>
+            <url>http://internettraffic.ru</url>
+        </author>
+    </authors>
+	
+	<queries>
+        <item for="install">
+			ALTER TABLE `?:banner_descriptions` ADD `it_button_text` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+        </item>
+		
+		<item for="install">
+			ALTER TABLE `?:banner_descriptions` ADD `it_description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+        </item>
+       
+        <item for="uninstall">
+			ALTER TABLE `?:banner_descriptions` DROP `it_button_text`;
+		</item>
+		
+		<item for="uninstall">
+			ALTER TABLE `?:banner_descriptions` DROP `it_description`;
+		</item>
+    </queries>
+</addon>

@@ -1,0 +1,163 @@
+// Dark_Navy.less
+
+// Custom code
+.top-menu-grid {
+    .box-shadow(rgba(0,0,0,0.10) 0px 1px 1px 0px, rgba(0,0,0,0.05) 0px 2px 2px 0px);
+}
+body:not(.fixed-header) .advanced-header {
+	.top-menu-grid .top-menu-grid-vetrtical, .ut2-top-my-account, .ut2-top-cart-content {
+		.ty-dropdown-box__title.open {
+		    padding-top: 2px;
+		    margin-top: -1px;
+		}
+	}	
+}
+.ty-discount-label__value em {
+	color: #ffffff;
+}
+.ty-icon-star-empty {
+	color: @base5;
+}
+
+
+// ======================================================= ##Variables
+
+@rounded_corners: true;
+@links: #00bcd4;
+@menu_links: #191b1e;
+@menu: #ffffff;
+@base: #eeeeee;
+@font: #191b1e;
+
+@primary_button: #00bcd4;
+//@primary_button_color
+//@primary_button_hover
+
+@secondary_button: #4a5259;
+//@secondary_button_color
+//@secondary_button_hover
+
+@tertiary_button: #ebf0f8;
+//@tertiary_button_color
+//@tertiary_button_hover
+
+@sidebar: #f3f4f7;
+@price: #191b1e;
+@discount_label: #eb560c;
+@in_stock: #308800;
+@out_of_stock: #999999;
+@top_panel_links: #999999;
+@top_panel_text: #999999;
+@footer_text: #000000;
+@decorative: #eb560c;
+
+@general_bg_color: #ffffff;
+@general_bg_image: transparent;
+@general_bg_repeat: repeat;
+@general_bg_scroll: scroll;
+
+@top_panel_bg: #4a5259;
+@top_panel_bg_full: false;
+@top_panel_bg_transparent: false;
+@top_panel_bg_grad_stop: #4a5259;
+
+@header_bg: #4a5259;
+@header_bg_full: false;
+@header_bg_transparent: false;
+@header_bg_grad_stop: #4a5259;
+
+@content_bg: #ffffff;
+@content_bg_full: false;
+@content_bg_transparent: true;
+
+@footer_bg: #4a5259;
+@footer_bg_full: false;
+@footer_bg_transparent: false;
+@footer_bg_grad_stop: #4a5259;
+
+@body_font: Arial,Helvetica,sans-serif;
+@body_font_size: 13px;
+@body_font_style: normal;
+@body_font_weight: normal;
+@headings_font: MuseoSansBlack,Arial,sans-serif;
+@headings_font_size: 24px;
+@headings_font_decoration: none;
+@headings_font_style: normal;
+@headings_font_weight: normal;
+@links_font: Arial,Helvetica,sans-serif;
+@links_font_size: 13px;
+@links_font_decoration: none;
+@links_font_style: normal;
+@links_font_weight: normal;
+@price_font: MuseoSansBlack,Arial,sans-serif;
+@price_font_size: 18px;
+@price_font_decoration: none;
+@price_font_style: normal;
+@price_font_weight: normal;
+@buttons_font: Arial,Helvetica,sans-serif;
+@buttons_font_size: 13px;
+@buttons_font_decoration: none;
+@buttons_font_style: normal;
+@buttons_font_weight: normal;
+
+// Only this style ------------------------------------
+
+@bt-color: @font;
+@abt__ut2_general_bright_hues: true;
+@categories-block-bg: @sidebar;
+@grid-list-title-color: #25282c;
+
+// Mix color
+@mix-lighten-font: 45%;
+@mix-lighten-max-font: 65%;
+@mix-discount_label_lighten: 45%;
+
+// Fill
+@fill-color-box: #eb560c;
+@title-color-box: #ffffff;
+@fill-gray-box: @base;
+
+// General
+@abt__ut2_general_use_rounding: little;
+@abt__ut2_general_use_titles_uppercase: true;
+@abt__ut2_general_stars_rating_color: #ffc107;
+
+@abt__ut2_general_labels_style: as_drop;
+@abt__ut2_general_labels_use_outline: false;
+@abt__ut2_general_labels_use_shadow: false;
+@abt__ut2_general_labels_use_text_shadow: false;
+
+@abt__ut2_general_buttons_style: use_background;
+@abt__ut2_general_buttons_use_text_uppercase: false;
+@abt__ut2_general_buttons_use_shadow: true;
+@abt__ut2_general_buttons_use_gradient: false;
+
+// Containers
+@abt__ut2_containers_header_add_delimiters: false;
+@abt__ut2_containers_header_use_color_menu_on_hover: #f3f4f7;
+@abt__ut2_containers_header_use_color_elements_on_hover: #f3f4f7;
+@abt__ut2_containers_header_use_color_icons: #00bcd4;
+@abt__ut2_containers_header_use_animation_for_not_empty_cart: true;
+
+// Product list
+@abt__ut2_product_list_show_grid_border: solid_without_margins;
+@abt__ut2_product_list_use_elements_alignment: use;
+@abt__ut2_product_list_extend_grid_item_on_hover: true;
+
+// Products
+@abt__ut2_products_use_color_buttons_add_to_cart: #00bcd4;
+
+// Checkout
+@checkout_input_border: #e1e1e1;
+@checkout_selected_input_border: #00bcd4;
+@checkout_step_title: #848c99;
+@checkout_input_text: #191b1e;
+@checkout_input_label: #848c99;
+@checkout_control_border: #e1e1e1;
+@checkout_selected_control_border: #00bcd4;
+@checkout_control_background: #ffffff;
+@checkout_selected_control_background: #e5f6f9;
+@checkout_control_title: #00bcd4;
+@checkout_control_description: #848c99;
+@checkout_control_label: #848c99;
+@checkout_terms_background: #fef0eb;

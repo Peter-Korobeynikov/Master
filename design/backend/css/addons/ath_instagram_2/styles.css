@@ -1,0 +1,14 @@
+
+#addon_ath_instagram_2installed .bg-icon,
+#addon_ath_instagram_2 .bg-icon {
+    border: 0px;
+    background: none;
+}
+
+/*For Add-on block*/
+.bmicon-instagram-feed-2 {
+	background-image: url('../../../media/images/addons/ath_instagram_2/images/icons_for_blocks.png') !important;
+}
+.block-header-icon.bmicon-instagram-feed-2 {
+	margin-top: 0;
+}

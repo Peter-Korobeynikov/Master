@@ -1,0 +1,1 @@
+{style src="addons/ab__video_gallery/styles.less"}

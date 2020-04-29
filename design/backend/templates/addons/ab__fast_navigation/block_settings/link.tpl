@@ -1,0 +1,1 @@
+<input type="text" id="block_{$block.block_id}_content_ab__fn_show_common_btn_link" name="block_data[content][ab__fn_show_common_btn_link]" value="{$block.content.ab__fn_show_common_btn_link}">

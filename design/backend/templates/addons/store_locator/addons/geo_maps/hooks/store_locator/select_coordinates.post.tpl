@@ -1,0 +1,1 @@
+{include file="buttons/button.tpl" but_text=__("select") but_target_id="map_picker" but_role="action" but_meta="btn-primary cm-dialog-opener" but_id="store_locator_picker_opener"}

@@ -1,0 +1,145 @@
+#logo-container, #logo-container a {
+    margin-bottom: 15px;
+    height: 40px;
+}
+
+#logo-container, #logo-container a {
+    margin-bottom: 15px;
+    height: 40px;
+}
+
+#logo-container, #logo-container a {
+    width: 102px;
+}
+
+#logo-container a {
+    display: block;
+    background: url("../media/images/addons/facebook_store/LOGO_CSCART.png") no-repeat;
+    background-size: 102px 40px;
+}
+
+/*Retina Display Logo*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    #logo-container a {
+        background: url("../media/images/addons/facebook_store/LOGO_CSCART.png") no-repeat;
+        background-size: 102px 40px;
+    }
+}
+
+#page-title {
+    border: none;
+    background-image: url("../media/images/addons/facebook_store/page-title-bg.png");
+}
+
+#page-title h1 {
+    margin: 0;
+    padding-top: 33px;
+    padding-bottom: 33px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 1px 2px #008fb3;
+    font-weight: 600;
+    font-size: 33px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 33px;
+}
+
+#add-page {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+}
+
+#add-page p {
+    margin: 0;
+    margin-bottom: 25px;
+    color: #777777;
+    text-align: center;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.button, input[type="submit"], input[type="button"], #submit {
+    display: inline-block;
+    padding: 12px 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #26ae90;
+    background-repeat: repeat-x;
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: none;
+    font-weight: 300;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.button.orange-btn {
+    background: #FF8D12;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 12px 40px;
+}
+
+p.note {
+    padding-top: 10px;
+    font-size: 11px;
+}
+
+ol.steps {
+    color: #777777;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    font-size: 15px;
+    margin: 0 auto;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.fb_reset {
+    background: none;
+    border: 0;
+    border-spacing: 0;
+    color: #000;
+    cursor: auto;
+    direction: ltr;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    text-shadow: none;
+    text-transform: none;
+    visibility: visible;
+    white-space: normal;
+    word-spacing: normal;
+}
+
+#content {
+    margin-top: 33px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 750px;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_wide_banner</id>
+    <version>4.5.0.8</version>
+<commit>fa8a6cecc8c0</commit>
+    <priority>1000</priority>
+    <position>1</position>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <default_language>en</default_language>
+    <supplier>Simtech Development</supplier>
+    <supplier_link>http://www.simtechdev.com</supplier_link>
+    <compatibility>
+        <dependencies>banners</dependencies>
+        <core_version>
+            <min>4.5.0</min>
+        </core_version>
+        <core_edition>
+            ULTIMATE,MULTIVENDOR
+        </core_edition>
+    </compatibility>
+    <settings edition_type="ROOT">
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="lkey" edition_type="ROOT">
+                        <type>input</type>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+    <queries>
+        <item>
+            ALTER TABLE `?:banners`
+            ADD COLUMN `button_color` varchar(64) NOT NULL DEFAULT '#000000',
+            ADD COLUMN `font_color` varchar(64) NOT NULL DEFAULT '#ffffff';
+        </item>
+        <item>
+            ALTER TABLE `?:banner_descriptions`
+            ADD COLUMN `banner_title` varchar(255) NOT NULL DEFAULT '',
+            ADD COLUMN `banner_subtitle` varchar(255) NOT NULL DEFAULT '',
+            ADD COLUMN `button_text` varchar(64) NOT NULL DEFAULT '';
+        </item>
+        <item for="uninstall">ALTER TABLE  `?:banners` DROP `button_color`,DROP `font_color`</item>
+        <item for="uninstall">ALTER TABLE  `?:banner_descriptions` DROP `banner_title`, DROP `banner_subtitle`, DROP `button_text`</item>
+    </queries>
+    <functions>
+        <item for="install">sd_ZDhiOGVlNWQ0MjI3NzcyMDFiMWU5ZGMx</item>
+        <item for="uninstall">sd_NzcyZjQ1MmQ1MjA1ODVmNzBiYTYzN2Rm</item>
+    </functions>
+</addon>

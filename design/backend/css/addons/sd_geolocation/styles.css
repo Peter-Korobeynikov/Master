@@ -1,0 +1,11 @@
+.block-header .bmicon-my-location,
+.select-block-box .bmicon-my-location {
+    background-position: 0 -210px;
+}
+.ty-my-location__map-wrapper {
+    float: left;
+    width: 600px;
+    height: 450px;
+    border: 1px solid #979797;
+    margin: 10px 0 20px;
+}

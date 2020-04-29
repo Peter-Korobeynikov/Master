@@ -1,0 +1,159 @@
+@import "../../config.less";
+
+// Decollapse button styles
+.help-tutorial {
+    width: 100%;
+    text-align: center;
+
+    position: absolute;
+    bottom: -20px;
+    z-index: 0;
+    
+    &-link {
+        display: inline-block;
+        padding: 5px 10px;
+
+        background: #f9f9f9;
+        box-shadow: 0 3px 3px #e0e0e0;
+        color: #999;
+
+        font-size: 12px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        vertical-align: middle;
+
+        position: relative;
+        z-index: 9;
+
+        transition: .256s margin;
+
+        &.pulled-left {
+            margin-left: -250px;
+        }
+
+        &.pulled-right {
+            margin-left: 250px;
+        }
+
+        &.open {
+            .help-tutorial-show {
+                display: none;
+            }
+        
+            .help-tutorial-close {
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: @LargeDesktopBreakpoint + 1px) {
+            &.pulled-left, &.pulled-right {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .help-tutorial-icon {
+        opacity: 0.6;
+        margin: 0 5px 0 0;
+    }
+
+    &-close {
+        display: none;
+    }
+}
+
+// Videos container
+.help-tutorial-wrapper {
+    background: #f5f5f5;
+    max-height: 0;
+    height: 0px;
+    overflow: hidden;
+    margin: -20px 0 45px 0;
+
+    .transition(all 300ms ease-in-out);
+
+    &.open {
+        margin: -20px 0 45px 0;
+        max-height: none;
+        max-height: unset;
+        height: 400px;
+    }
+
+    @media (max-width: @TabletBreakpoint) {
+        display: none;
+    }
+}
+
+// .help-tutorial-video class adding to .help-tutorial-wrapper when
+// will be more than one video (Layouts editor as example)
+.help-tutorial-video {
+    .help-tutorial-content {
+        width: 640px;
+        margin: -135px auto 0;
+        padding-bottom: 17px;
+        padding-top: 45px;
+
+        .transition(all 300ms ease-in-out);
+    }
+}
+
+.help-tutorial-content {
+    margin: -520px auto 0;
+    margin: -465px auto 0;
+    padding-bottom: 40px;
+    padding-top: 15px;
+    
+    min-height: 415px;
+
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-around;
+    height: 0;
+
+    &.open {
+        margin-top: 0;
+    }
+
+    .help-tutorial-iframe-wrapper {
+        position: relative;
+        display: inline-flex;
+        flex-basis: 100%;
+        max-width: 605px;
+        margin: 10px;
+    }
+
+    iframe {
+        -webkit-backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// FIXME: Clean code
+.help-tutorial-all-video {
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 18px;
+    margin-top: -23px;
+}
+.open .help-tutorial-all-video {
+    padding: 23px;
+}
+.close-content .help-tutorial-content, .close-content .help-tutorial-all-video {
+    display: none;
+}
+.close-content .help-tutorial-all-video {
+    padding: 0px;
+}
+.help-tutorial-video.close-content .help-tutorial-all-video {
+    padding: 8px;
+}
+
+.help-tutorial-video-header {
+    z-index: 1000;
+}

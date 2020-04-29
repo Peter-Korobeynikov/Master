@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<block_scheme scheme="1.0">
+<location dispatch="categories.ab__lc_catalog" is_default="0" layout_id="" object_ids="" custom_html="" position="" lang_code="en" name="AB: Categories" title="AB: Categories" meta_description="AB: Category catalog" meta_keywords="AB: Categories">
+<containers>
+<container position="TOP_PANEL" width="16" user_class="" linked_to_default="Y" status="A"/>
+<container position="HEADER" width="16" user_class="" linked_to_default="Y" status="A"/>
+<container position="CONTENT" width="16" user_class="" linked_to_default="Y" status="A">
+<grid width="16" user_class="" linked_to_default="Y" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1" extended="0" ab__show_in_tabs="N" ab__use_ajax="N">
+<grid width="16" user_class="" linked_to_default="Y" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0" extended="0" ab__show_in_tabs="N" ab__use_ajax="N">
+<blocks>
+<block>
+<type><![CDATA[breadcrumbs]]></type>
+<properties>
+<template><![CDATA[common/breadcrumbs.tpl]]></template>
+</properties>
+<lang_code><![CDATA[en]]></lang_code>
+<name><![CDATA[Breadcrumbs]]></name>
+<object_id><![CDATA[0]]></object_id>
+<object_type><![CDATA[]]></object_type>
+<content><![CDATA[]]></content>
+<object_ids><![CDATA[]]></object_ids>
+<wrapper><![CDATA[]]></wrapper>
+<user_class><![CDATA[]]></user_class>
+<order><![CDATA[0]]></order>
+<status><![CDATA[A]]></status>
+<translations>
+<translation lang_code="ru"><![CDATA[Быстрые ссылки]]></translation>
+</translations>
+<contents/>
+</block>
+<block>
+<type><![CDATA[main]]></type>
+<properties><![CDATA[]]></properties>
+<lang_code><![CDATA[en]]></lang_code>
+<name><![CDATA[Main Content]]></name>
+<object_id><![CDATA[0]]></object_id>
+<object_type><![CDATA[]]></object_type>
+<content><![CDATA[]]></content>
+<object_ids><![CDATA[]]></object_ids>
+<wrapper><![CDATA[blocks/wrappers/mainbox_general.tpl]]></wrapper>
+<user_class><![CDATA[]]></user_class>
+<order><![CDATA[1]]></order>
+<status><![CDATA[A]]></status>
+<translations>
+<translation lang_code="ru"><![CDATA[Главное содержимое]]></translation>
+</translations>
+<contents/>
+</block>
+</blocks>
+</grid>
+</grid>
+</container>
+<container container_id="872" location_id="218" position="FOOTER" width="16" user_class="" linked_to_default="Y" status="A"/>
+</containers>
+<translations>
+<translation lang_code="ru">
+<meta_keywords><![CDATA[]]></meta_keywords>
+<page_title><![CDATA[Каталог категорий магазина]]></page_title>
+<meta_description><![CDATA[]]></meta_description>
+<name>AB: Каталог категорий</name>
+</translation>
+</translations>
+</location>
+</block_scheme>

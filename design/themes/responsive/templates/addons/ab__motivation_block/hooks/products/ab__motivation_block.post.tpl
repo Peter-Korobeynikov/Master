@@ -1,0 +1,1 @@
+{include file="addons/ab__motivation_block/blocks/ab__motivation_block.tpl"}

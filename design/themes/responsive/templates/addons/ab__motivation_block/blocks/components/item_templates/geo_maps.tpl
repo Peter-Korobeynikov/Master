@@ -1,0 +1,1 @@
+{include file="addons/geo_maps/views/geo_maps/shipping_estimation.tpl"}

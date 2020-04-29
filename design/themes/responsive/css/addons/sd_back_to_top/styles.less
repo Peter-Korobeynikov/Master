@@ -1,0 +1,114 @@
+@sd-btn-back-media-mode-stripe   : ~"(min-width: 1355px)";
+@sd-btn-back-media-mode-stripeoff: ~"(max-width: 1354px)";
+@sd-btn-back-media-mobile        : ~"(max-width: 480px)";
+@sd-btn-back-icon-color          : #989898;
+@sd-btn-back-bg                  : ~"118, 118, 118";
+@sd-btn-back-bg-active           : ~"167, 167, 167";
+
+.sd-back-to-top {
+    font-size: 38px;
+    line-height: 0;
+    position: fixed;
+    z-index: 100;
+    right: 1em;
+    bottom: 2em;
+    width: 1em;
+    height: 1em;
+    transition:
+        opacity 0.2s ease-in-out,
+        background-color 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+    outline-style: none;
+    background-color: ~"rgba(@{sd-btn-back-bg}, 0.15)";
+
+    @media @sd-btn-back-media-mode-stripeoff {
+        height: 1em;
+        border-radius: 50%;
+        background-color: ~"rgba(@{sd-btn-back-bg-active}, 0.3)";
+    }
+
+    @media @sd-btn-back-media-mobile {
+        font-size: 42px;
+        right: 0.5em;
+        bottom: 0.5em;
+    }
+
+    &:hover {
+        background-color: ~"rgba(@{sd-btn-back-bg}, 0.3)";
+
+        @media @sd-btn-back-media-mode-stripeoff {
+            background-color: ~"rgba(@{sd-btn-back-bg-active}, 0.5)";
+        }
+
+        .sd-back-to-top-icon {
+            opacity: 0.7;
+        }
+    }
+
+    &:focus {
+        outline-style: none;
+    }
+
+    &.is-visible {
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .no-touchevents &:hover {
+        cursor: pointer;
+
+        .sd-back-to-top-icon {
+            opacity: 1;
+        }
+    }
+}
+
+.sd-back-to-top-icon {
+    transition:
+        0.2s opacity ease-in-out,
+        0.2s transform ease-in-out,
+        0.2s fill ease-in-out;
+    fill: @sd-btn-back-icon-color;
+    opacity: 0.5;
+
+    .is-returnable & {
+        -webkit-transform: rotateZ(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotateZ(180deg);
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+    }
+}
+
+// STRIPE
+.sd-back-to-top.stripe {
+    @media @sd-btn-back-media-mode-stripe {
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        padding: 0 15px;
+        text-align: center;
+
+        &--right {
+            right: 0;
+            left: auto;
+        }
+
+        &--left {
+            right: auto;
+            left: 0;
+        }
+    }
+
+    &--off {
+        border-radius: 50%;
+    }
+
+    .sd-back-to-top-icon {
+        position: relative;
+        top: 50%;
+        height: 1em;
+        margin-top: -0.5em;
+    }
+}

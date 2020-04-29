@@ -1,0 +1,1 @@
+{if ($ab_dotd_product_ids && $product.product_id|in_array:$ab_dotd_product_ids) || ($product.promotions)}<span class="ab_dotd_product_label">{__('ab__dotd_product_label')}</span>{/if}

@@ -1,0 +1,1 @@
+{style src="addons/sd_geolocation/styles.less"}

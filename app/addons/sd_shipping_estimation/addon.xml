@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_shipping_estimation</id>
+    <version>4.10.0.2-unitheme2</version>
+<commit>4974ee031535</commit>
+    <priority>200</priority>
+    <position>1</position>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <default_language>en</default_language>
+    <supplier>Simtech Development</supplier>
+    <supplier_link>http://www.simtechdev.com</supplier_link>
+    <authors>
+        <author>
+            <name>Simtech Development</name>
+            <email>sales@simtechdev.com</email>
+            <url>http://www.simtechdev.com</url>
+        </author>
+    </authors>
+    <compatibility>
+        <core_version>
+            <min>4.4.0</min>
+        </core_version>
+        <core_edition>
+            ULTIMATE,MULTIVENDOR
+        </core_edition>
+    </compatibility>
+    <settings edition_type="ROOT,ULT:VENDOR">
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="lkey" edition_type="ROOT">
+                        <type>input</type>
+                    </item>
+                    <item id="number_of_methods_in_block">
+                        <type>input</type>
+                        <default_value>1</default_value>
+                    </item>
+                    <item id="display_in_product_page">
+                        <type>selectbox</type>
+                        <default_value>promo</default_value>
+                        <variants>
+                            <item id="promo"/>
+                            <item id="bottom"/>
+                            <item id="none"/>
+                        </variants>
+                    </item>
+                    <item id="auto_load">
+                        <type>checkbox</type>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="save_min_shipping">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="show_delivery_time">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="waiting_time">
+                        <type>input</type>
+                        <default_value/>
+                    </item>
+                    <item id="filter_crawlers">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+    <functions>
+        <item for="install">sd_YjYxNmE3MzRlOGI5NWUzMzFjODY5MzZl</item>
+        <item for="uninstall">sd_MWY3OGE5ZGI1ODdkM2RmYmE2NTgyNGZh</item>
+    </functions>
+</addon>

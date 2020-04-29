@@ -1,0 +1,208 @@
+/*******************************************************************************************
+*   ___  _          ______                     _ _                _                        *
+*  / _ \| |         | ___ \                   | (_)              | |              © 2020   *
+* / /_\ | | _____  _| |_/ /_ __ __ _ _ __   __| |_ _ __   __ _   | |_ ___  __ _ _ __ ___   *
+* |  _  | |/ _ \ \/ / ___ \ '__/ _` | '_ \ / _` | | '_ \ / _` |  | __/ _ \/ _` | '_ ` _ \  *
+* | | | | |  __/>  <| |_/ / | | (_| | | | | (_| | | | | | (_| |  | ||  __/ (_| | | | | | | *
+* \_| |_/_|\___/_/\_\____/|_|  \__,_|_| |_|\__,_|_|_| |_|\__, |  \___\___|\__,_|_| |_| |_| *
+*                                                         __/ |                            *
+*                                                        |___/                             *
+* ---------------------------------------------------------------------------------------- *
+* This is commercial software, only users who have purchased a valid license and accept    *
+* to the terms of the License Agreement can install and use this program.                  *
+* ---------------------------------------------------------------------------------------- *
+* website: https://cs-cart.alexbranding.com                                                *
+*   email: info@alexbranding.com                                                           *
+*******************************************************************************************/
+@fluid-row_min-padding: 20px;
+@fluid-row_max-padding: 20px;
+
+.container-fluid {
+    width: auto;
+    min-width: inherit;
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+    
+    > .container-fluid-row {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
+	> .row-fluid {
+		max-width: @fluidContainerMaxWidth;
+		min-width: @fluidContainerMinWidth;
+		margin: 0 auto;
+	}
+}
+.container-fluid-row {
+    max-width: @fluidContainerMaxWidth;
+    min-width: @fluidContainerMinWidth;
+    margin: 0 auto;
+    .clearfix();
+    
+    > .row-fluid {
+	    padding-left: @fluid-row_max-padding;
+	    padding-right: @fluid-row_max-padding;   
+    }
+	
+    @media screen and (max-width: 320px) {
+	    > .row-fluid {
+		    padding-left: @fluid-row_min-padding;
+		    padding-right: @fluid-row_min-padding;
+	    }
+    }
+}
+.container-fluid > .container-fluid-row.container-fluid-row-no-limit {
+    padding: 0;
+    
+    > .row-fluid {
+	    padding-left: 0;
+	    padding-right: 0;	    
+    }
+}
+.container-fluid-row-full-width,
+.container-fluid-row-no-limit {
+    max-width: none;
+}
+.container-fluid-row-full-width > .row-fluid {
+    max-width: @fluidContainerMaxWidth;
+    min-width: @fluidContainerMinWidth;
+    margin: 0 auto;
+}
+.container-fluid-row.container-fluid-row-no-limit {
+    padding-right: 0;
+    padding-left: 0;
+}
+.row-fluid [class*="span"]:first-child {
+    padding-left: 0;
+    padding-right: 0;
+}
+.container-fluid .ty-footer-grid__full-width {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media screen and (max-width: @fluidContainerMaxWidth + 160px) {
+	.container-fluid > .container-fluid-row {
+        padding-right: @fluid-row_max-padding;
+        padding-left: @fluid-row_max-padding;
+	}
+	.container-fluid-row-full-width > .row-fluid {
+        max-width: @fluidContainerMaxWidth - (@fluid-row_max-padding * 2);
+	}
+	.container-fluid > .container-fluid-row.container-fluid-row-no-limit {
+        .abyt-a-content {
+            padding-right: @fluid-row_max-padding;
+            padding-left: @fluid-row_max-padding;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .tygh-header > div, .tygh-top-panel > div {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 1440px) {
+	.container-fluid-row-full-width > .row-fluid {
+		max-width: @fluidContainerMaxWidth;
+	}
+}
+
+.tygh-content > div {
+	padding-bottom: 0;	
+}
+
+.main-content-grid {
+	padding-bottom: @pdf;
+}
+
+.bp-tygh-main-container--padding {
+	padding-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+   body .ty-tygh {
+	   overflow: hidden;
+   }
+}
+
+
+.top-menu-grid {
+	@media screen and (max-width: 768px) {
+		& > .row-fluid {
+			padding-left: 0;
+			padding-right: 0;			
+		}
+	}
+	.top-menu > .ty-menu__items {
+		.ty-top-mine__submenu-col {
+			width: -webkit-calc(~'100%/6 - 14px');
+			width: calc(~'100%/6 - 14px');	
+		}
+		& > .ty-menu__item > .ty-menu__submenu {
+			.ty-menu__submenu-items {
+				padding: 40px 0;
+			}
+		}
+		@media screen and (max-width: 1280px) {
+			.ty-top-mine__submenu-col {
+			  width: -webkit-calc(~'100%/5 - 14px');
+			  width: calc(~'100%/5 - 14px');	
+			}
+		}
+		@media screen and (max-width: 1024px) {
+			.ty-top-mine__submenu-col {
+			  width: -webkit-calc(~'100%/4 - 14px');
+			  width: calc(~'100%/4 - 14px');	
+			}
+		}
+		@media screen and (max-width: 900px) {
+			.ty-top-mine__submenu-col {
+			  width: -webkit-calc(~'100%/3 - 14px');
+			  width: calc(~'100%/3 - 14px');	
+			}
+		}
+	}	
+}
+
+.ty-pagination-container {
+	@media screen and (min-width: 480px) {
+		#categories_view_pagination_contents, #products_search_pagination_contents {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		div[class^="ty-column"] {
+			flex: 1;
+			flex-basis: auto;
+			min-width: 230px;
+			margin-right: 0;
+		}
+		.ty-column11, .ty-column12, .ty-column13, .ty-column14, .ty-column15,
+		.ty-column16, .ty-column17, .ty-column18, .ty-column19, .ty-column20 {
+			flex-basis: 230px !important;
+		}
+	}
+}
+
+.grid-list {
+	.clearfix();
+	div[class^="ty-column"] {
+		float: left;
+		margin-right: 0;
+
+		@media screen and (max-width: 960px) and (min-width: 481px) {
+			max-width: 33.3333%;
+			min-width: 50%;
+			width: auto;
+		}
+		@media screen and (max-width: 480px) {
+			max-width: 50%;
+			min-width: 50%;
+			width: auto;
+		}
+		@media screen and (max-width: 320px) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+}

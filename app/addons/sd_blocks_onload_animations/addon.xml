@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_blocks_onload_animations</id>
+    <version>4.5.0.4</version>
+<commit>318df51dc150</commit>
+    <priority>4294967293</priority>
+    <position>1</position>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <default_language>en</default_language>
+    <supplier>Simtech Development</supplier>
+    <supplier_link>http://www.simtechdev.com</supplier_link>
+    <authors>
+        <author>
+            <name>Simtech Development</name>
+            <email>sales@simtechdev.com</email>
+            <url>http://www.simtechdev.com</url>
+        </author>
+    </authors>
+    <compatibility>
+        <core_version>
+            <min>4.5.0</min>
+        </core_version>
+        <core_edition>
+            ULTIMATE,MULTIVENDOR
+        </core_edition>
+    </compatibility>
+    <settings edition_type="ROOT">
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="lkey" edition_type="ROOT">
+                        <type>input</type>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+    <queries>
+        <item>ALTER TABLE ?:bm_grids ADD animation_effect VARCHAR(255) CHARACTER SET utf8 NULL DEFAULT ''</item>
+        <item>ALTER TABLE ?:bm_grids ADD animation_duration VARCHAR(255) CHARACTER SET utf8 NULL DEFAULT ''</item>
+        <item>ALTER TABLE ?:bm_grids ADD animation_delay VARCHAR(255) CHARACTER SET utf8 NULL DEFAULT ''</item>
+        <item>ALTER TABLE ?:bm_grids ADD animation_speed VARCHAR(255) CHARACTER SET utf8 NULL DEFAULT ''</item>
+        <item>ALTER TABLE ?:bm_grids ADD number_of_impressions VARCHAR(255) CHARACTER SET utf8 NULL DEFAULT ''</item>
+
+        <item for="uninstall">ALTER TABLE ?:bm_grids DROP animation_effect</item>
+        <item for="uninstall">ALTER TABLE ?:bm_grids DROP animation_duration</item>
+        <item for="uninstall">ALTER TABLE ?:bm_grids DROP animation_delay</item>
+        <item for="uninstall">ALTER TABLE ?:bm_grids DROP animation_speed</item>
+        <item for="uninstall">ALTER TABLE ?:bm_grids DROP number_of_impressions</item>
+    </queries>
+</addon>

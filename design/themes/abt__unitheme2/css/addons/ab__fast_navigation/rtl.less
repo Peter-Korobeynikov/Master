@@ -1,0 +1,56 @@
+.ab-fn-parent {
+    .ab-fn-first-level-item, .ab-fn-second-level-item {
+        &.scroller-item {
+            &:not(.ab-fn-loaded-image) {
+                .ab-fn-image-wrap:not(.ab-fn-no-image-wrapper) {
+                    .ab-fn-img-loader {
+                        &:before {
+                            right: 50%;
+                            left: auto;
+                        }
+                    }
+                }
+            }
+        }
+        &.ab-fn-common-item-link {
+            .ab-fn-arrow-more {
+                i {
+                    right: 50%;
+                    left: auto;
+                    &:before {
+                        transform: rotate(145deg);
+                    }
+                    &:after {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+    .ab-fn-second-level {
+        .ab-fn-delimeter-plus {
+            &:before, &:after {
+                right: 50%;
+                left: auto;
+            }
+        }
+    }
+    .owl-carousel.owl-theme .owl-controls .owl-buttons {
+        .owl-prev {
+            right: 20px;
+            left: auto;
+        }
+        .owl-next {
+            left: -20px;
+            right: auto;
+        }
+    }
+}
+.ab-fn-first-level-item {
+    &.active {
+        &:before, &:after {
+            right: 50%;
+            left: auto;
+        }
+    }
+}

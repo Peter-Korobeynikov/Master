@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<addon scheme="4.0">
+    <id>yandex_checkout</id>
+    <version>1.0</version>
+    <default_language>en</default_language>
+    <priority>1000</priority>
+    <status>active</status>
+    <auto_install>ULTIMATE,MULTIVENDOR</auto_install>
+    <compatibility>
+        <dependencies>rus_taxes</dependencies>
+    </compatibility>
+
+    <autoload>
+        <psr4 prefix="Tygh\Addons\YandexCheckout\">src</psr4>
+        <psr4 prefix="YandexCheckout\">lib/vendor/yandex-money/yandex-checkout-sdk-php/lib</psr4>
+    </autoload>
+
+    <bootstrap>\Tygh\Addons\YandexCheckout\Bootstrap</bootstrap>
+    <installer>\Tygh\Addons\YandexCheckout\Installer</installer>
+</addon>

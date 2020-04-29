@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>boxberry</id>
+    <version>1.1</version>
+    <priority>100</priority>
+    <position>0</position>
+    <status>active</status>
+    <default_language>ru</default_language>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+    <queries>
+        <item for="install">
+            DELETE FROM ?:shipping_service_descriptions WHERE `service_id` IN (SELECT `service_id` FROM ?:shipping_services  WHERE `module`= 'boxberry');
+        </item>
+        <item for="install">
+            DELETE FROM ?:shipping_services  WHERE `module`= 'boxberry';
+        </item>
+        <item for="install">
+            INSERT INTO ?:shipping_services (`status`, `module`, `code`)
+            VALUES ('A', 'boxberry', 'boxberry_self'), ('A', 'boxberry', 'boxberry_courier'), ('A', 'boxberry', 'boxberry_courier_prepaid'), ('A', 'boxberry', 'boxberry_self_prepaid');
+        </item>
+        <item for="install">
+            INSERT INTO ?:shipping_service_descriptions (`service_id`, `description`, `lang_code`)
+            VALUES ((SELECT service_id FROM ?:shipping_services WHERE code = 'boxberry_self'), 'Boxberry - доставка до пункта выдачи', 'ru'), ((SELECT service_id FROM ?:shipping_services WHERE code = 'boxberry_courier_prepaid'), 'Boxberry - курьерская доставка(без нал. платежа)', 'ru'),((SELECT service_id FROM ?:shipping_services WHERE code = 'boxberry_self_prepaid'), 'Boxberry - доставка до пункта выдачи(без нал. платежа)', 'ru'), ((SELECT service_id FROM ?:shipping_services WHERE code = 'boxberry_courier'), 'Boxberry - курьерская доставка', 'ru');
+        </item>
+        <item for="uninstall">DELETE FROM ?:shipping_service_descriptions WHERE `service_id` IN (SELECT `service_id` FROM ?:shipping_services  WHERE `module`= 'boxberry');</item>
+        <item for="uninstall">DELETE FROM ?:shipping_services  WHERE `module`= 'boxberry';</item>
+    </queries>
+
+</addon>

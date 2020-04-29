@@ -1,0 +1,24 @@
+{
+  "default_style": "Default",
+  "default": {
+	"Black": true,
+	"Blue": true,
+    "Brick": true,
+    "Dark_Blue": true,
+    "Dark_Navy": true,
+	"Default": true,
+	"Fiolent": true,
+	"Flame": true,
+	"Gray": true,
+	"Green": true,
+	"Indigo": true,
+	"Ink": true,
+	"Mint": true,
+	"Original": true,
+    "Powder": true,
+	"Purple": true,
+    "Skyfall": true,
+	"Velvet": true,
+    "White": true
+  }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+<id>ab__addons_manager</id>
+<version>2.3.3</version>
+<hash>54db9c4abebfea1a762c9415e23dd14fa4c39e36, 2019-09-12 10:46:10 +0300</hash>
+<priority>10</priority>
+<position>0</position>
+<status>active</status>
+<default_language>en</default_language>
+<authors>
+<author>
+<name>AlexBranding</name>
+<email>info@alexbranding.com</email>
+<url>https://alexbranding.com</url>
+</author>
+</authors>
+<supplier>AlexBranding</supplier>
+<supplier_link>https://cs-cart.alexbranding.com</supplier_link>
+<compatibility>
+<core_version><min>4.9.3</min></core_version>
+<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+</compatibility>
+<settings edition_type="ROOT,ULT:VENDOR">
+<sections>
+<section id="settings" edition_type="ROOT,ULT:VENDOR">
+<items>
+<item id="code"><type>hidden</type><default_value>ABM-279qaV4NY5Yt1NiyDg9x1</default_value></item>
+<item id="build"><type>hidden</type><default_value>512</default_value></item>
+</items>
+</section>
+</sections>
+</settings>
+<functions><item>fn_ab__am</item></functions>
+<queries>
+<item for="uninstall">DELETE FROM ?:privileges WHERE section_id LIKE 'ab__addons_manager';</item>
+<item>REPLACE INTO ?:privileges (section_id, is_default, privilege) VALUES ('ab__addons_manager', 'Y', 'ab__am.manage');</item>
+</queries>
+</addon>

@@ -1,0 +1,1 @@
+{style src="addons/ab__search_motivation/styles.less"}

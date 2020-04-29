@@ -1,0 +1,1 @@
+{style src="addons/sd_blocks_onload_animations/styles.less"}

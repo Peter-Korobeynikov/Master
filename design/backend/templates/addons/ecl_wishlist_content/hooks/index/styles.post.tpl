@@ -1,0 +1,1 @@
+{style src="addons/ecl_wishlist_content/styles.css"}

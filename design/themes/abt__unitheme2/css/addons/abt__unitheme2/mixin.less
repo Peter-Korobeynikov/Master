@@ -1,0 +1,268 @@
+/*******************************************************************************************
+*   ___  _          ______                     _ _                _                        *
+*  / _ \| |         | ___ \                   | (_)              | |              © 2020   *
+* / /_\ | | _____  _| |_/ /_ __ __ _ _ __   __| |_ _ __   __ _   | |_ ___  __ _ _ __ ___   *
+* |  _  | |/ _ \ \/ / ___ \ '__/ _` | '_ \ / _` | | '_ \ / _` |  | __/ _ \/ _` | '_ ` _ \  *
+* | | | | |  __/>  <| |_/ / | | (_| | | | | (_| | | | | | (_| |  | ||  __/ (_| | | | | | | *
+* \_| |_/_|\___/_/\_\____/|_|  \__,_|_| |_|\__,_|_|_| |_|\__, |  \___\___|\__,_|_| |_| |_| *
+*                                                         __/ |                            *
+*                                                        |___/                             *
+* ---------------------------------------------------------------------------------------- *
+* This is commercial software, only users who have purchased a valid license and accept    *
+* to the terms of the License Agreement can install and use this program.                  *
+* ---------------------------------------------------------------------------------------- *
+* website: https://cs-cart.alexbranding.com                                                *
+*   email: info@alexbranding.com                                                           *
+*******************************************************************************************/
+/* UniTheme2.0 MIXIN */
+
+@lighten-font: lighten(@font, @mix-lighten-font);
+@lighten-max-font: lighten(@font, @mix-lighten-max-font);
+@discount_label_lighten: lighten(@discount_label, @mix-discount_label_lighten);
+@active-menu-link: darken(@menu, 5%);
+
+@z-index: 1000;
+@fog-color: @content_bg;
+@swipe-menu-width: 290px;
+
+@pdi: 15px; // internal
+@pd: 20px; // external
+@pdf: @pd*2; // external duble size
+
+@heading_letter-spacing: normal;
+@button_letter-spacing: .01929em;
+
+@base5: darken(@base, 5%);
+@base10: darken(@base, 10%);
+@base20: darken(@base, 20%);
+@base30: darken(@base, 30%);
+
+@supports (display: flex) or (display: -webkit-box) {
+ 
+}
+
+.ajx-link() {
+	border-bottom: 1px dotted desaturate(lighten(@links, 10%), 10%);
+}
+
+.xcalc(@_xwidth) when (isnumber(@_xwidth)) {
+	width: -webkit-calc(~'100% -'@_xwidth);
+	width: calc(~'100% -'@_xwidth);	
+}
+
+.ycalc(@_yheight) when (isnumber(@_yheight)) {
+	height: -webkit-calc(~'100% -'@_yheight);
+	height: calc(~'100% -'@_yheight);	
+}
+
+.left-fog(@_xwidth, @fog-color) {
+	&:before {
+	    content: '';
+	    display: block;
+	    position: absolute;
+	    bottom: 0;
+	    height: 100%;
+	    width: @_xwidth;
+	    right: auto;
+	    left: 0;
+	    background: linear-gradient(270deg,fade(@fog-color,0%) 0%,@fog-color 100%);
+	    z-index: 1;
+	}
+}
+.right-fog(@_xwidth, @fog-color) {
+	&:after {
+	    content: '';
+	    display: block;
+	    position: absolute;
+	    bottom: 0;
+	    height: 100%;
+	    width: @_xwidth;
+	    right: 0;
+	    left: auto;
+	    background: linear-gradient(90deg,fade(@fog-color,0%) 0%,@fog-color 100%);
+	    z-index: 1;
+	}
+}
+
+.ut2-pop-up-box(@color) {
+	position: absolute;
+	z-index: 300;
+	min-width: 250px;
+	max-width: 280px;
+	min-height: 100px;
+	padding: @pdi @pd;
+	white-space: normal;
+	text-align: left;
+	background-color: @color;
+	background-clip: padding-box;
+	
+	.box-shadow(0 0 0 1px rgba(0,0,0,0.03), 0 5px 7px 0 rgba(0,0,0,0.22));
+	
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		left: 50%;
+		top: -22px;
+		margin-left: -11px;
+		border-color: transparent;
+		border-style: solid;
+		border-top-width: 0;
+		border-bottom-color: @color;
+		border-width: 11px;
+	}
+	.closer {
+		@media screen and (min-width: 1025px) {
+			display: none;
+		}
+		cursor: pointer;
+	    position: absolute;
+	    right: 10px;
+	    top: 10px;
+	    color: contrast(@color, @lighten-font, white);
+	}
+    &:hover .closer {
+	    display: block;
+    }
+}
+
+.center-block() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+.ut2-btn() {
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: max-content;
+	white-space: normal;
+	height: @min-height-button;
+	min-width: @min-height-button;
+	padding: 0 @pdi;
+	line-height: 96%;
+	text-transform: none;
+	letter-spacing: @button_letter-spacing;
+	color: @bt-color;
+	border: 0 none;
+	background: @base;
+	background-clip: border-box;
+	
+	.buttons_font_transform() when (@abt__ut2_general_buttons_use_text_uppercase = true) {
+		text-transform: uppercase;
+		font-weight: 550;
+		letter-spacing: 0.035em;
+		line-height: 100%;
+		font-size: @buttons_font_size - 2;
+	}
+	.buttons_font_transform();
+	
+	.button_gradient_fill() when (@abt__ut2_general_buttons_use_gradient = true) {
+		background: linear-gradient(0deg, @base, lighten(@base, 3%));
+	}
+	.button_gradient_fill();
+
+	.ut2_button_shadow() when (@abt__ut2_general_buttons_use_shadow = true) {
+		.box-shadow(inset 0 -2px 0 0 rgba(0, 0, 0, 0.1));
+	}
+	.ut2_button_shadow();
+
+	.ut2_round(@round: 4px) when (@abt__ut2_general_use_rounding = little) {
+		.border-radius(@round);
+	}
+	.ut2_round(@round: @min-height-button) when (@abt__ut2_general_use_rounding = full) {
+		.border-radius(@round);
+	}
+	.ut2_round();
+	
+	.transition(all 150ms);
+		
+	& > span {
+	    display: flex;
+	    align-items: center;
+	    height: @min-height-button - 10px;
+	}
+    i {
+	    top: inherit;
+	    font-size: 22px;
+		line-height: @min-height-button - 10px;
+		margin-right: 0;
+    }
+    i + span {
+	    margin-left: 5px;
+    }
+	&:hover {
+		padding: 0 15px;
+		background: lighten(@base, 2%);
+		color: @bt-color; // Ident color
+					
+		.button_gradient_fill() when (@abt__ut2_general_buttons_use_gradient = true) {
+			background: linear-gradient(0deg, lighten(@base, 2%), lighten(@base, 4%));
+		}
+		.button_gradient_fill();
+		
+		.ut2_button_shadow() when (@abt__ut2_general_buttons_use_shadow = true) {
+			.box-shadow(inset 0 -2px 0 0 rgba(0, 0, 0, 0.2));
+		}
+		.ut2_button_shadow();
+	}
+}
+
+.ut2-top-panel-wrap-buttons() {
+    display: table-cell;
+    width: 50px;
+    height: 48px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: right;
+    border: 0 none;
+    line-height: 100%;
+}
+
+.ut2-hover-effect() {
+	.transition(all 0.5s ease);
+	.box-shadow(inset 0 0 1000px rgba(0,0,0,0.2));
+}
+
+.box-shadow(@shadow1, @shadow2) {
+    -webkit-box-shadow: @shadow1, @shadow2;
+    -moz-box-shadow: @shadow1, @shadow2;
+    box-shadow: @shadow1, @shadow2;
+}
+.box-shadow(@shadow1, @shadow2, @shadow3) {
+    -webkit-box-shadow: @shadow1, @shadow2, @shadow3;
+    -moz-box-shadow: @shadow1, @shadow2, @shadow3;
+    box-shadow: @shadow1, @shadow2, @shadow3;
+}
+
+.ut2_round(@round: 0) when (@abt__ut2_general_use_rounding = do_not_use) {
+	.border-radius(@round);
+}
+.ut2_round(@round: 4px) when (@abt__ut2_general_use_rounding = little) {
+	.border-radius(@round);
+}
+.ut2_round(@round: @min-height-button) when (@abt__ut2_general_use_rounding = full) {
+	.border-radius(@round);
+}
+
+.ut2_animation( @animation ) {
+	-webkit-animation: @animation;
+	-moz-animation: @animation;
+	-o-animation: @animation;
+	animation: @animation;
+}
+
+.ut2_line_clamp( @lines ) {
+	-webkit-line-clamp: @lines;
+	-webkit-box-orient: vertical;
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

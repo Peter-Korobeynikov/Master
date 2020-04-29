@@ -1,0 +1,16 @@
+Legend:
+[+] - new feature/improvement
+[*] - functionality changes
+[!] - bugfix
+
+Version 1.12, 11 February 2019
+
+[+] Compatibility with HTTP2 for old CS-Cart versions is added
+
+Version 1.13, 26 February 2019
+
+[!] PHP notice was removed
+
+Version 1.14, 8 May 2019
+
+[+] Cache system was added for better performance

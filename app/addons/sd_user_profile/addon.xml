@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_user_profile</id>
+    <version>4.10.0.1-unitheme2</version>
+<commit>f8fa9eabb8d1</commit>
+    <priority>10000</priority>
+    <position>1</position>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <default_language>en</default_language>
+    <supplier>Simtech Development</supplier>
+    <supplier_link>http://www.simtechdev.com</supplier_link>
+    <compatibility>
+        <core_version>
+            <min>4.5.0</min>
+        </core_version>
+        <core_edition>
+            ULTIMATE,MULTIVENDOR
+        </core_edition>
+    </compatibility>
+    <settings edition_type="ROOT">
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="lkey">
+                        <type>input</type>
+                    </item>
+                    <item id="is_image_circle">
+                        <type>checkbox</type>
+                        <default_value>N</default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+    <queries>
+        <item>ALTER TABLE `?:users` ADD `gender` varchar(32) NOT NULL default 0</item>
+        <item for="uninstall">ALTER TABLE `?:users` DROP `gender`</item>
+    </queries>
+</addon>

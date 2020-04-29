@@ -1,0 +1,2 @@
+<?php
+ if (!defined('BOOTSTRAP')) { die('Access denied'); } if ($_SERVER['REQUEST_METHOD'] == 'POST') { if ($mode == 'delete_image') { if (!empty($auth['user_id'])) { if (isset($_REQUEST['image_id']) && isset($_REQUEST['pair_id']) && isset($_REQUEST['object_type'])) { fn_delete_image($_REQUEST['image_id'], $_REQUEST['pair_id'], $_REQUEST['object_type']); } if (defined('AJAX_REQUEST')) { Tygh::$app['ajax']->assign('deleted', true); exit; } elseif (!empty($_SERVER['HTTP_REFERER'])) { return array(CONTROLLER_STATUS_REDIRECT, $_SERVER['HTTP_REFERER']); } } } return; } 

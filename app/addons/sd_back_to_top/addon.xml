@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_back_to_top</id>
+    <version>4.5.0.6</version>
+<commit>31bd1a472b0b</commit>
+    <priority>4294967293</priority>
+    <position>1</position>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <default_language>en</default_language>
+    <supplier>Simtech Development</supplier>
+    <supplier_link>http://www.simtechdev.com</supplier_link>
+    <compatibility>
+        <core_version>
+            <min>4.5.0</min>
+        </core_version>
+        <core_edition>
+            ULTIMATE,MULTIVENDOR
+        </core_edition>
+    </compatibility>
+    <settings edition_type="MVE:ROOT,ULT:VENDOR">
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="lkey" edition_type="ROOT">
+                        <type>input</type>
+                    </item>
+                    <item id="stripe_mode">
+                        <type>selectbox</type>
+                        <default_value>left</default_value>
+                        <variants>
+                            <item id="disable"/>
+                            <item id="left"/>
+                            <item id="right"/>
+                        </variants>
+                    </item>
+                    <item id="elevator">
+                        <type>checkbox</type>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="distance">
+                        <type>input</type>
+                        <default_value>100</default_value>
+                    </item>
+                    <item id="animation">
+                        <type>selectbox</type>
+                        <default_value>slow</default_value>
+                        <variants>
+                            <item id="none"/>
+                            <item id="slow"/>
+                            <item id="fast"/>
+                        </variants>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+</addon>

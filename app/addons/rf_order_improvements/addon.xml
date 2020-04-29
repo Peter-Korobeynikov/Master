@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>rf_order_improvements</id>
+    <version>1.3.1</version>
+    <priority>5000</priority>
+    <status>active</status>
+    <position>0</position>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+    <default_language>en</default_language>
+    <supplier>RetailFactory</supplier>
+    <supplier_link>https://retailfactory.ru</supplier_link>
+    <has_icon>Y</has_icon>
+    <settings>
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="license_number">
+                        <type>input</type>
+                    </item>
+                    <item id="link_orders_to_profile">
+                        <type>checkbox</type>
+                    </item>
+                    <item id="auto_create_profile">
+                        <type>checkbox</type>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+</addon>

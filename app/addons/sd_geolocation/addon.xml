@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_geolocation</id>
+    <version>4.5.0.16</version>
+<commit>ed193d6e4c01</commit>
+    <priority>900</priority>
+    <position>1</position>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <default_language>en</default_language>
+    <supplier>Simtech Development</supplier>
+    <supplier_link>http://www.simtechdev.com</supplier_link>
+    <authors>
+        <author>
+            <name>Simtech Development</name>
+            <email>sales@simtechdev.com</email>
+            <url>http://www.simtechdev.com</url>
+        </author>
+    </authors>
+    <compatibility>
+        <conflicts>sd_geoip_maxmind,rus_geolocation</conflicts>
+        <core_version>
+            <min>4.5.0</min>
+        </core_version>
+        <core_edition>
+            ULTIMATE,MULTIVENDOR
+        </core_edition>
+    </compatibility>
+    <settings>
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="lkey" edition_type="ROOT">
+                        <type>input</type>
+                    </item>
+                    <item id="google_settings">
+                        <type>header</type>
+                    </item>
+                    <item id="google_key">
+                        <type>input</type>
+                        <default_value/>
+                    </item>
+                    <item id="zoom_control">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="map_type_control">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="scale_control">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="api_key_restrictions">
+                        <type>header</type>
+                    </item>
+                    <item id="google_map_key_info">
+                        <type>info</type>
+                        <handler>fn_sd_geolocation_google_map_key_info</handler>
+                        <variants/>
+                    </item>
+                    <item id="use_second_key">
+                        <type>checkbox</type>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="google_map_key" parent_id="use_second_key">
+                        <type>input</type>
+                        <default_value/>
+                    </item>
+                    <item id="default_location">
+                        <type>header</type>
+                    </item>
+                    <item id="country_code">
+                        <type>input</type>
+                        <default_value>FR</default_value>
+                    </item>
+                    <item id="state_code">
+                        <type>input</type>
+                        <default_value>75</default_value>
+                    </item>
+                    <item id="city">
+                        <type>input</type>
+                        <default_value>Paris</default_value>
+                    </item>
+                    <item id="postal_code">
+                        <type>input</type>
+                        <default_value>75001</default_value>
+                    </item>
+                    <item id="latitude">
+                        <type>input</type>
+                        <default_value>48.8550448</default_value>
+                    </item>
+                    <item id="longitude">
+                        <type>input</type>
+                        <default_value>2.3433988</default_value>
+                    </item>
+                    <item id="additional_settings">
+                        <type>header</type>
+                    </item>
+                    <item id="test_mode">
+                        <type>checkbox</type>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="test_ip_address">
+                        <type>input</type>
+                        <default_value>93.81.56.181</default_value>
+                    </item>
+                    <item id="autosave_location">
+                        <type>checkbox</type>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="show_map_on_hover">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="show_map_in_popup">
+                        <type>checkbox</type>
+                        <default_value>Y</default_value>
+                    </item>
+                    <item id="show_city_confirm">
+                        <type>selectbox</type>
+                        <default_value>none</default_value>
+                        <variants>
+                            <item id="tooltip"/>
+                            <item id="popup"/>
+                            <item id="none"/>
+                        </variants>
+                    </item>
+                    <item id="map_zoom">
+                        <type>input</type>
+                        <default_value>16</default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+    <queries>
+        <item for="install">ALTER TABLE `?:users`
+            ADD `latitude` double NOT NULL default '0',
+            ADD `longitude` double NOT NULL default '0'</item>
+        <item for="uninstall">ALTER TABLE ?:users DROP `latitude`, DROP `longitude`</item>
+    </queries>
+</addon>

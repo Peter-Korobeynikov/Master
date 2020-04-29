@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+<id>ab__landing_categories</id>
+<version>1.9.0</version>
+<hash>e4d512cf2b382383e38baef79c2252e0363216ad, 2020-01-29 17:51:42</hash>
+<priority>2017</priority>
+<position>0</position>
+<status>active</status>
+<default_language>en</default_language>
+<authors>
+<author>
+<name>AlexBranding</name>
+<email>info@alexbranding.com</email>
+<url>https://alexbranding.com</url>
+</author>
+</authors>
+<supplier>AlexBranding</supplier>
+<supplier_link>https://cs-cart.alexbranding.com</supplier_link>
+<compatibility>
+<core_version><min>4.10.1</min></core_version>
+<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+</compatibility>
+<settings edition_type="ROOT,ULT:VENDOR">
+<sections>
+<section id="settings" edition_type="ROOT,ULT:VENDOR">
+<items>
+<item id="code"><type>hidden</type><default_value>ABA-4ENTc9MPVc9t7nmR4j6jk</default_value></item>
+<item id="build"><type>hidden</type><default_value>590</default_value></item>
+<item id="add_catalog_to_breadcrumbs">
+<type>checkbox</type>
+<default_value>N</default_value>
+</item>
+<item id="maximum_number_of_displayed_items">
+<type>input</type>
+<default_value>5</default_value>
+</item>
+<item id="catalog_menu">
+<type>input</type>
+<default_value>0</default_value>
+</item>
+<item id="show_category_tree">
+<type>checkbox</type>
+<default_value>N</default_value>
+</item>
+<item id="link">
+<type>info</type>
+<handler>fn_ab__lc_link</handler>
+</item>
+<item id="ab__as">
+<type>header</type>
+</item>
+<item id="ab__as_add_to_sitemap">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+</items>
+</section>
+</sections>
+</settings>
+<queries>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__lc.data.manage', 'Y', 'ab__addons', 'ab__landing_categories', 'N')</item>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__lc.data.view', 'Y', 'ab__addons', 'ab__landing_categories', 'Y')</item>
+<item for="uninstall">DELETE FROM ?:privileges WHERE section_id = 'ab__landing_categories' OR group_id = 'ab__landing_categories'</item>
+</queries>
+<functions>
+<item for="install">fn_ab__lc_install</item>
+</functions>
+</addon>

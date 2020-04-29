@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+<id>ab__video_gallery</id>
+<version>2.1.2</version>
+<hash>856e7b692d0232bc74b2366981e9443135e5dc53, 2020-01-14 17:37:48</hash>
+<priority>2017</priority>
+<position>0</position>
+<status>active</status>
+<default_language>en</default_language>
+<authors>
+<author>
+<name>AlexBranding</name>
+<email>info@alexbranding.com</email>
+<url>https://alexbranding.com</url>
+</author>
+</authors>
+<supplier>AlexBranding</supplier>
+<supplier_link>https://cs-cart.alexbranding.com</supplier_link>
+<compatibility>
+<conflicts>sd_labels</conflicts>
+<dependencies></dependencies>
+<core_version><min>4.10.1</min></core_version>
+<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+<!-- Minimal/Maximal PHP version. Min or Max parameter can be optional -->
+<php_version>
+<min>5.3.0</min>
+</php_version>
+</compatibility>
+<settings edition_type="ROOT,ULT:VENDOR">
+<sections>
+<section id="settings" edition_type="ROOT,ULT:VENDOR">
+<items>
+<item id="position">
+<type>selectbox</type>
+<default_value>post</default_value>
+<variants>
+<item id="pre"></item>
+<item id="post"></item>
+</variants>
+</item>
+<item id="show_in_lists">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="on_thumbnail_click">
+<type>selectbox</type>
+<default_value>open_popup</default_value>
+<variants>
+<item id="image_replace"></item>
+<item id="open_popup"></item>
+</variants>
+</item>
+<item id="controls">
+<type>checkbox</type>
+<default_value>N</default_value>
+</item>
+<item id="repeat">
+<type>checkbox</type>
+<default_value>N</default_value>
+</item>
+<item id="th_size">
+<type>input</type>
+<default_value>50</default_value>
+</item>
+<item id="cycle">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="vertical">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="code"><type>hidden</type><default_value>ABA-7KKRkiovyK1KVwYe0toLg</default_value></item>
+<item id="build"><type>hidden</type><default_value>573</default_value></item>
+</items>
+</section>
+</sections>
+</settings>
+<functions>
+<item for="install">fn_ab__video_gallery_install</item>
+</functions>
+<queries>
+<item for="install">
+CREATE TABLE IF NOT EXISTS `?:ab__video_gallery` (
+`video_id` mediumint(8) unsigned NOT NULL auto_increment,
+`product_id` mediumint(8) unsigned NOT NULL,
+`pos` smallint(5) unsigned NOT NULL default 0,
+`status` char(1) NOT NULL default 'A',
+`icon_type` varchar(16) NOT NULL default 'snapshot',
+PRIMARY KEY (`video_id`),
+KEY `status` (`status`),
+KEY `product_id` (`product_id`)
+) DEFAULT CHARSET UTF8;
+</item>
+<item for="install">
+CREATE TABLE IF NOT EXISTS `?:ab__video_gallery_descriptions` (
+`video_id` mediumint(8) unsigned NOT NULL,
+`youtube_id` varchar(16) NOT NULL default '',
+`title` varchar(255) NOT NULL default '',
+`description` mediumtext NOT NULL default '',
+`lang_code` char(2) NOT NULL default '',
+PRIMARY KEY (`video_id`,`lang_code`)
+) DEFAULT CHARSET UTF8;
+</item>
+<item for="install">
+CREATE TABLE IF NOT EXISTS `?:ab__video_gallery_settings` (
+`product_id` mediumint(8) unsigned NOT NULL,
+`var` varchar(32) NOT NULL default '',
+`value` varchar(255) NOT NULL default '',
+PRIMARY KEY (`product_id`, `var`)
+) DEFAULT CHARSET UTF8;
+</item>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__vg_manage_videos', 'Y', 'ab__addons', 'ab__video_gallery', 'N')</item>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__vg_view_videos', 'Y', 'ab__addons', 'ab__video_gallery', 'Y')</item>
+<item for="uninstall">DELETE FROM ?:privileges WHERE section_id = 'ab__video_gallery' OR group_id = 'ab__video_gallery'</item>
+</queries>
+</addon>

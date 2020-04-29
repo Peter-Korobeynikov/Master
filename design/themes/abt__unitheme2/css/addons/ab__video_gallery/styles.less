@@ -1,0 +1,436 @@
+/*******************************************************************************************
+*   ___  _          ______                     _ _                _                        *
+*  / _ \| |         | ___ \                   | (_)              | |              © 2020   *
+* / /_\ | | _____  _| |_/ /_ __ __ _ _ __   __| |_ _ __   __ _   | |_ ___  __ _ _ __ ___   *
+* |  _  | |/ _ \ \/ / ___ \ '__/ _` | '_ \ / _` | | '_ \ / _` |  | __/ _ \/ _` | '_ ` _ \  *
+* | | | | |  __/>  <| |_/ / | | (_| | | | | (_| | | | | | (_| |  | ||  __/ (_| | | | | | | *
+* \_| |_/_|\___/_/\_\____/|_|  \__,_|_| |_|\__,_|_|_| |_|\__, |  \___\___|\__,_|_| |_| |_| *
+*                                                         __/ |                            *
+*                                                        |___/                             *
+* ---------------------------------------------------------------------------------------- *
+* This is commercial software, only users who have purchased a valid license and accept    *
+* to the terms of the License Agreement can install and use this program.                  *
+* ---------------------------------------------------------------------------------------- *
+* website: https://cs-cart.alexbranding.com                                                *
+*   email: info@alexbranding.com                                                           *
+*******************************************************************************************/
+html[dir="ltr"] .ab_vg-images-wrapper .owl-carousel .owl-wrapper {
+	display: -webkit-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
+}
+
+img.ab__vg-icon-video {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: 0 5px 0 0;
+    width: 15px;
+    top: 3px;
+    z-index: 1;
+}
+.ty-compact-list {
+    img.ab__vg-icon-video {
+		width: 14px;
+		margin: 3px 5px 0px 0;
+    }
+}
+.ut2-mid-narrow img.ab__vg-icon-video {
+    margin-right: 3px;
+    width: 14px;
+    top: 4px;	
+}
+.ut2-min-narrow img.ab__vg-icon-video {
+	margin-right: 3px;
+    width: 14px;
+    top: 3px;
+}
+
+.ab__video_gallery-block {
+  margin: 0 -10px;
+}
+.ab__vg-videos {
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    clear: both;
+    width: 100%;
+
+    .ab__vg-video {
+	    min-width: 200px;
+	    max-width: 33.333333%;
+	    padding: 0 10px @pd 10px;
+
+	    @media screen and (max-width: 500px) {
+		    max-width: 50%;
+		    min-width: inherit;
+	    }
+
+	    &_title p {
+		    font-size: 14px;
+		    padding: 10px 0 0;
+		}
+		&_description p {
+		    color: @lighten-font;
+		    font-size: 12px;
+		}
+
+	    @media screen and (max-width: 767px) {
+		    &_title {
+			    word-wrap: break-word;
+			    line-height: 1.2;
+			    min-height: 60px;
+				max-height: 60px;
+				
+				.ut2_line_clamp(3);
+				.hyphens(auto);
+				
+				strong {
+					font-weight: normal !important;
+				}
+		    }
+		    &_description {
+			    display: none;
+		    }
+	    }
+    }
+}
+.ab__vg-video_thumb {
+    display: inline-block;
+    position: relative;
+    
+    @media screen and (min-width: 768px) {
+        width: 100%;
+    }
+    img {
+	    width: 100%;
+    }
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: url('/images/addons/ab__video_gallery/youtube_logo.png') no-repeat center;
+        background-size: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -25px 0 0 -25px;
+        .opacity(95);
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.05);
+    }
+    &:hover {
+        &:before {
+            .opacity(100);
+        }
+        &:after {
+            background: rgba(0, 0, 0, 0.02);
+            -webkit-transition: background .3s;
+            transition: background .3s;
+        }
+    }
+}
+.ab__vg-image_gallery_item {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    background: @base;
+        
+    img {
+	    padding: 10px;
+    }
+}
+.ab__vg_loading img {
+    width: 100%;
+}
+
+
+.ty-product-block__img-wrapper {
+	.ab__vg-image_gallery_video {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	iframe.ab__vg-image_gallery_video {
+		width: 100%;
+        height: 100%;
+		position: relative;
+		z-index: 2;
+	}
+}
+.ab__vg-image_gallery_video {
+	cursor: pointer;
+	
+	&:not(.hidden) {
+		display: flex;
+		position: relative;
+		
+		@media screen and (max-width: 767px) {
+			align-items: center;
+		    background-color: black;
+		    height: 100%;
+	    }
+	}
+    	
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 60px;
+		height: 50px;
+		background: url('/images/addons/ab__video_gallery/youtube_logo.png') no-repeat center;
+		background-size: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -25px 0 0 -30px;
+		.opacity(95);
+	}
+	&:hover:before {
+		.opacity(100);
+		.transition(opacity 100ms linear);
+	}
+}
+
+.ut2-pb {
+	
+	&:not(.ut2-big-image) .ty-previewer {
+		align-items: flex-start;
+	}
+	.ty-product-thumbnails {
+		
+		@media screen and (min-width: 768px) {
+			&[class*="vertical"] {
+				justify-content: flex-start;
+			}
+		}
+		
+        .ty-product-thumbnails__item {
+	        padding: 0;
+	        margin: 0;
+
+	        &.ab__vg-image_gallery_item {
+				border: 2px solid @content_bg;
+    		}
+    		   
+	        @media screen and (max-width: 767px) {
+		        max-width: 50px;
+	        }
+        }
+        &.jcarousel-skin {
+	        .ty-product-thumbnails__item {
+		        display: inline-block;
+		        margin: 0 0 2px 0;
+	        }
+	    }
+    }
+    
+    @media screen and (max-width: 767px) {
+	    .ty-product-img {
+		    height: auto !important;
+	    }
+    }
+
+    @media screen and (min-width: 768px) {
+		&__img-wrapper &__img .ab_vg-images-wrapper [class*="vertical-thumbnails"] {
+		}
+	}
+}
+
+.ty-quick-view__wrapper {
+	.ty-product-thumbnails {
+		margin-bottom: @pdi;
+		
+		.ty-product-thumbnails__item {
+			max-width: 50px;
+		}
+
+		&:not(.owl-carousel) {
+		    .ty-product-thumbnails__item:not(.gallery) {
+				max-width: 15%;
+				min-width: 40px;
+			}
+		}
+	}
+}
+
+.ty-product-thumbnails {
+	margin-top: 0;
+	
+    &.ab-vg-vertical-thumbnails {
+	   margin-top: 0;	   
+    }
+}	
+.ty-product-thumbnails_gallery {
+	
+    &.ab-vg-vertical-thumbnails {
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    -webkit-box-pack: start;
+		justify-content: flex-start;
+		overflow: hidden;
+		.ab-vertical-gallery-mixin();
+	    
+        .cm-image-gallery {
+            .ab-vertical-gallery-mixin();
+            
+            .cm-item-gallery {
+                margin: 0;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                
+                & > a {
+                    margin: 0;
+                }
+            }
+        }
+    	.ty-hand {
+	    	display: inline-block;
+	    	width: 100%;
+			padding: 3px;
+		    background: @base;
+		    -webkit-transition: all .3s;
+            transition: all .3s;
+		    
+		    &:first-child {
+			    margin-bottom: 3px;
+		    }
+		    &:last-child {
+			    margin-top: 3px;
+		    }
+		    &:hover {
+			    color: @links;
+			    .opacity(100);
+		    }
+	    }
+	    &:focus .ty-hand {
+		    &:first-child {
+			    visibility: visible;
+		    }		    
+	    }
+    }
+}
+.ab-vertical, .ab-vg-vertical {
+	float: right;
+}
+
+.cm-popup-box[id^="ab__vg_video"] {
+    .object-container {
+	    text-align: center;
+        width: 100%;
+        min-height: 400px;
+        max-height: 100%;
+        margin: 0 auto;
+        padding: 0;
+        overflow: hidden;
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (min-width: 970px) and (min-height: 600px) {
+	        height: 600px !important;
+	        
+	        iframe {
+	            min-height: auto !important;
+	        }
+        }
+        @media screen and (max-width: 969px) and (min-height: 320px) {
+	        height: inherit !important;
+	        min-height: auto;
+	        top: 10px !important;
+	        
+	        iframe {
+	            min-height: 320px;
+	        }       
+        }
+        @media screen and (max-width: 969px) and (min-height: 768px) {
+	        height: 480px !important;
+	        
+	        iframe {
+	            min-height: 100%;
+	        }  
+        }
+    }
+}
+
+@media screen and ( max-width: 767px ) {
+	.ab-vertical, .ab-vg-vertical, .ab-vertical-thumbnails, .ab-vg-vertical-thumbnails {
+		width: 100% !important;
+		display: inline-block;
+		position: inherit;
+        margin-top: 10px;
+	}
+	.ty-product-img {
+		min-height: 280px;
+	}
+	.ab-vertical, .ab-vg-vertical {
+		margin-top: 0;
+	}
+	.ab-vg-j-product_labels {
+		margin-left: 0 !important;
+	}
+	.ab-vg-product_labels {
+		margin-left: 0 !important;
+	}
+}
+
+.ab-vertical-gallery-mixin() {
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;    
+    }
+}
+
+
+.ut2-big-image {
+    .ut2-pb__img-wrapper {
+        iframe.ab__vg-image_gallery_video {
+            max-height: 600px;
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 934px) {
+	    .ab__vg-videos .ab__vg-video {
+		    max-width: 50%;
+	    }
+    }
+    .ty-product-img:not(.ab-vg-vertical) {
+	    padding-bottom: @pdi;
+    }
+}
+
+.cm-ab__vg-gallery {
+  opacity: 0;
+  
+  &.ab__vg_loaded {
+    opacity: 1;
+  }
+}

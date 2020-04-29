@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>ecl_wishlist_content</id>
+    <version>1.2</version>
+    <priority>2900</priority>
+    <position>0</position>
+    <status>active</status>
+    <authors>
+        <author>
+            <name>eCom Labs</name>
+            <email>contact@ecom-labs.com</email>
+            <url>https://www.ecom-labs.com</url>
+            <phone>+7 963 234 30 03</phone>
+        </author>
+    </authors>
+    <supplier>eCom Labs</supplier>
+    <supplier_link>https://www.ecom-labs.com</supplier_link>
+    <default_language>en</default_language>
+    <compatibility>
+        <dependencies>wishlist</dependencies>
+    </compatibility>
+    <functions>
+        <item for="install">fn_ecl_wishlist_content_install</item>
+    </functions>
+</addon>

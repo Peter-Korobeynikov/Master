@@ -1,0 +1,86 @@
+// Notifications
+.notification-content-extended {
+    .modal;
+    top: 140px;
+    width: 700px;
+    z-index: 1021;
+    h1 {
+        .modal-header;
+        padding-top: 0px;
+        margin-top: 3px;
+        font-size: 24.5px;
+        span {
+            position: absolute;
+            top: 9px;
+            right: 9px;
+            width: 19px;
+            height: 19px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        span:after {
+            content: '\00d7';
+        }
+    }
+}
+
+.notification-body-extended {
+    .modal-body;
+    max-height: 450px !important;
+}
+.notification-footer-extended {
+    .modal-footer;
+}
+.alert-wrap {
+    position: fixed;
+    z-index: 950;
+    max-width: 620px;
+    transition: top linear 0.1s;
+    top: 130px;
+    right: 6px;
+    left: 50%;
+}
+.alert {
+    opacity: 0.95;
+
+    * {
+        text-shadow: none;
+    }
+    strong {
+        padding-right: 5px;
+    }
+}
+.close {
+    font-size: 28px;
+    font-weight: 200;
+}
+.ajax-loading-box {
+    z-index: 100600;
+    position: fixed;
+    top: 50%;
+    padding: 0px;
+    left: 50%;
+    width: 52px;
+    height: 52px;
+    margin-top: -26px;
+    margin-left: -26px;
+    .border-radius(5px);
+    background:url('../media/images/ajax_loader.svg') no-repeat 10px 10px #0d0d0d;
+    opacity: .8;
+    overflow: visible;
+    strong {
+        display: none;
+    }
+}
+.ajax-loading-box-with-text {
+    min-width: 120px;
+    min-height: 76px;
+    background-position: 44px 10px;
+}
+.ajax-loading-box-with-text span {
+    color: #FFF;
+    margin-top: 50px;
+    display: block;
+    margin-left: 0px;
+    text-align: center;
+}

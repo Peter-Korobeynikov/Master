@@ -1,0 +1,1 @@
+{style src="addons/ab__addons_manager/styles.less"}

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<addon scheme='2.0' edition_type="ROOT,ULT:VENDOR">
+	<id>powerfull_owl_free</id>
+	<version>1.1</version> 
+	<default_language>en</default_language>
+	<name>Extended Banner Slider FREE</name>
+	<description>This add-on will make your banners-carousel fantastic! <![CDATA[ Developed by <a target="_blank" href="http://cart-power.com/">Cart-Power</a>]]></description>
+	<priority>9795313778</priority>
+	<position>13</position>
+	<status>active</status>
+	<auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+	<translations>
+		<item for="name" lang="ru">Cart-Power: Расширенный баннер слайдер Бесплатный</item>
+		<item for="description" lang="ru">Расширяет возможности настройки баннеров. Разработан <![CDATA[<a target="_blank" href="http://cart-power.ru/">Cart-Power</a>]]>. Профессиональная разработка для CS-Cart.</item>
+	</translations>
+	<authors>
+		<author>
+			<name>Cart-Power</name>
+			<email>sales@cart-power.com</email>
+			<url>http://cart-power.com</url>
+		</author>
+	</authors>
+	<default_language>en</default_language>
+	<language_variables>
+		<item lang="en" id="skin">Skin</item>
+		<item lang="ru" id="skin">Тема</item>
+		<item lang="en" id="transitionstyle">Transitionstyle</item>
+		<item lang="ru" id="transitionstyle">Стиль перехода</item>
+		<item lang="en" id="pager">Pagination</item>
+		<item lang="ru" id="pager">Паджинация</item>
+		<item lang="en" id="progress_bar">Progress bar</item>
+		<item lang="ru" id="progress_bar">Строка загрузки</item>
+		<item lang="en" id="stop_on_hover">Stop on hover</item>
+		<item lang="ru" id="stop_on_hover">Остановить при наведении</item>
+		<item lang="en" id="top">Top</item>
+		<item lang="ru" id="top">Сверху</item>
+		<item lang="en" id="bottom">Bottom</item>
+		<item lang="ru" id="bottom">Снизу</item>
+		<item lang="en" id="fade">fade</item>
+		<item lang="ru" id="fade">Выцветание</item>
+		<item lang="en" id="backslide">backSlide</item>
+		<item lang="ru" id="backslide">Приближение с заднего плана</item>
+		<item lang="en" id="godown">goDown</item>
+		<item lang="ru" id="godown">Вылет сверху</item>
+		<item lang="en" id="scaleup">scaleUp</item>
+		<item lang="ru" id="scaleup">Расширение за края экрана</item>
+	</language_variables>
+</addon>
+

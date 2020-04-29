@@ -1,0 +1,102 @@
+@import "variables.less";
+
+.ty-tygh {
+    overflow: hidden; //Cut off overflowing content on scale-down effect
+}
+
+.sd {
+
+    //
+    // Classes for different transition effects
+    //
+
+    &-scale-up {
+        .transition(@default-transition);
+        .scale(0);
+        opacity: 0;
+
+        &.in {
+            .scale(1);
+        }
+    }
+
+    &-scale-down {
+        .transition(@default-transition);
+        .scale(@scale-factor);
+        opacity: 0;
+
+        &.in {
+            .scale(1);
+        }
+    }
+
+    &-slide-up {
+        .transition(@default-transition);
+        .translate(0, @vertical-transition-distance);
+        opacity: 0;
+    }
+
+    &-slide-down {
+        .transition(@default-transition);
+        .translate(0, -@vertical-transition-distance);
+        opacity: 0;
+    }
+
+    &-slide-left {
+        .transition(@default-transition);
+        .translate(-@horizontal-transition-distance, 0);
+        opacity: 0;
+    }
+
+    &-slide-right {
+        .transition(@default-transition);
+        .translate(@horizontal-transition-distance, 0);
+        opacity: 0;
+    }
+
+    &-fade-in {
+        opacity: 0;
+    }
+
+    //
+    //   Classes for different timing functions
+    //
+
+    &-ease-in {
+        .transition-timing-function(ease-in);
+    }
+
+    &-ease-in-out {
+        .transition-timing-function(ease-in-out);
+    }
+
+    &-linear {
+        .transition-timing-function(linear);
+    }
+}
+
+//
+//  Class that triggers transitions
+//
+
+.in {
+    .transform(none);
+    opacity: 1;
+}
+
+//
+//  Generate classes for transtion durations and delays
+//
+.generate_timings(@steps-count);
+
+//
+//  Top menu fix
+//
+
+.sd-animated {
+    &.top-menu-grid,
+    &.top-menu {
+        z-index: 115;
+        position: relative;
+    }
+}

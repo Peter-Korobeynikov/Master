@@ -1,0 +1,8 @@
+Legend:
+[+] - new feature/improvement
+[*] - functionality changes
+[!] - bugfix
+
+Version 1.2, 12 August 2019
+
+[+] Adaptation for UniTheme 2 was made

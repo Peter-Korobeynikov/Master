@@ -1,0 +1,89 @@
+v1.13.0 May 3, 2019
+------------------------------------------------------------------------
++ added templates for Unitheme 2;
+! fixed bug with mass banner update;
+
+v1.12.1 March 13, 2019
+------------------------------------------------------------------------
++ added UpgradeCenter/Connector for further updates;
++ Unitheme: Fixed bug when disabling buttons in the Grid product list. There was an offset when hovering on products adjacent to the banner;
++ Improved adaptability;
+
+v1.12.0 March 6, 2019
+------------------------------------------------------------------------
++ added ability to download demo data;
+
+v1.11.2 February 5, 2019
+------------------------------------------------------------------------
+! fixed setting "Hide features list in product list view" in Unitheme;
+
+v1.11.1 January 14, 2019
+------------------------------------------------------------------------
+! fixed banner displaying for "products_without_options" layout in unitheme;
+
+
+v1.11 December 20, 2018
+------------------------------------------------------------------------
++ added the ability to use category banners in the "products_without_options" layout;
+
+
+v1.10 November 1, 2017
+------------------------------------------------------------------------
+! fixed bug with mass banners saving (empty categories list);
+
+
+v1.9 October 25, 2017
+------------------------------------------------------------------------
++ added mass activation and deactivation of banners;
++ added the ability to change the "from date" and "to date" of banners from the list page;
++ added user privileges;
++ added help;
+
+
+v1.8 August 10, 2017
+------------------------------------------------------------------------
+~ fixed bug delete selected banner;
+
+
+v1.7 July 20, 2017
+------------------------------------------------------------------------
+~ fixed bug displaying banner, if there are not enough products in the category;
+
+
+v1.6 June 6, 2017
+------------------------------------------------------------------------
++ added setting of the position for each banner;
++ added the ability to specify several positions for banner movement each time the page is refreshing;
++ added auto deactivating expired banners on cron-job;
++ added a setting that allows displaying a banner in the subcategories of the selected categories;
+~ denied category block caching, if there is a banner inside;
+
+
+v1.5 May 13, 2017
+------------------------------------------------------------------------
+~ fixed bug of getting a list of all banners in admin panel;
+
+
+v1.4 April 3, 2017
+------------------------------------------------------------------------
++ added changelog;
++ added setting, which allows to replace one product for saving products grid;
+~ random order of banners is replaced by a sequential;
+
+
+v1.3 October 5, 2016
+------------------------------------------------------------------------
+~ improved banner's output style;
+~ fixed bugs;
+
+
+v1.2 August 25, 2016
+------------------------------------------------------------------------
++ added setting, which allows to open banner's link in new window;
+~ all weekdays turned on by default;
+
+
+v1.1 August 3, 2016
+------------------------------------------------------------------------
+~ fixed bugs;
+

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+<id>ab__scroll_to_top</id>
+<version>1.4.0</version>
+<hash>b8c934434d09dc68cc953b928c8b019766d3bba1, 2020-03-13 12:59:12</hash>
+<priority>2016</priority>
+<position>0</position>
+<status>active</status>
+<default_language>en</default_language>
+<authors>
+<author>
+<name>AlexBranding</name>
+<email>info@alexbranding.com</email>
+<url>https://alexbranding.com</url>
+</author>
+</authors>
+<supplier>AlexBranding</supplier>
+<supplier_link>https://cs-cart.alexbranding.com</supplier_link>
+<compatibility>
+<core_version><min>4.9.1</min></core_version>
+<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+</compatibility>
+<settings edition_type="ROOT,ULT:VENDOR">
+<sections>
+<section id="settings" edition_type="ROOT,ULT:VENDOR">
+<items>
+<item id="position">
+<type>selectbox</type>
+<default_value>bottom_right</default_value>
+<variants>
+<item id="top_left"></item>
+<item id="top_right"></item>
+<item id="bottom_left"></item>
+<item id="bottom_right"></item>
+</variants>
+</item>
+<item id="transition"><type>input</type><default_value>600</default_value></item>
+<item id="icon">
+<type>selectbox</type>
+<default_value>arrow_1</default_value>
+<variants>
+<item id="arrow_1"></item>
+<item id="arrow_2"></item>
+<item id="arrow_3"></item>
+<item id="arrow_4"></item>
+<item id="arrow_5"></item>
+<item id="arrow_6"></item>
+<item id="arrow_7"></item>
+<item id="arrow_8"></item>
+<item id="arrow_9"></item>
+<item id="arrow_10"></item>
+</variants>
+</item>
+<item id="margin_top"><type>input</type><default_value>0</default_value></item>
+<item id="margin_right"><type>input</type><default_value>10</default_value></item>
+<item id="margin_bottom"><type>input</type><default_value>10</default_value></item>
+<item id="margin_left"><type>input</type><default_value>0</default_value></item>
+<item id="font_size"><type>input</type><default_value>64</default_value></item>
+<item id="units">
+<type>selectbox</type>
+<default_value>px</default_value>
+<variants>
+<item id="px"></item>
+<item id="pt"></item>
+<item id="pc"></item>
+<item id="cm"></item>
+<item id="mm"></item>
+<item id="em"></item>
+<item id="rem"></item>
+<item id="ex"></item>
+<item id="ch"></item>
+<item id="%"></item>
+<item id="vw"></item>
+<item id="vh"></item>
+</variants>
+</item>
+<item id="font_weight">
+<type>selectbox</type>
+<default_value>normal</default_value>
+<variants>
+<item id="normal"></item>
+<item id="bold"></item>
+</variants>
+</item>
+<item id="color"><type>template</type><default_value>color.tpl</default_value></item>
+<item id="hide_on_mobile"><type>checkbox</type><default_value>Y</default_value></item>
+<item id="show_in_admin_panel"><type>checkbox</type><default_value/></item>
+<item id="ab__stt_color"><type>hidden</type><default_value>#000000</default_value></item>
+<item id="code"><type>hidden</type><default_value>ABA-PNtNC74qd7HEz9LH9thlC</default_value></item>
+<item id="build"><type>hidden</type><default_value>602</default_value></item>
+</items>
+</section>
+</sections>
+</settings>
+<functions>
+<item for="install">fn_ab__am_install</item>
+<item for="uninstall">fn_ab__am_uninstall</item>
+</functions>
+<queries>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__stt.data.manage', 'Y', 'ab__addons', 'ab__scroll_to_top', 'N')</item>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__stt.data.view', 'Y', 'ab__addons', 'ab__scroll_to_top', 'Y')</item>
+<item for="uninstall">DELETE FROM ?:privileges WHERE section_id = 'ab__scroll_to_top' OR group_id = 'ab__scroll_to_top'</item>
+</queries>
+</addon>

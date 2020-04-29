@@ -1,0 +1,30 @@
+.user-panel {
+    padding: 12px !important; /* override unitheme2 theme style */
+}
+
+.sd-user-profile-upload-image-box {
+    display: flex;
+    padding: 6px 0 0;
+
+    & > div:not(:first-child) {
+        margin: 0 0 0 10px;
+    }
+
+    .image-upload {
+        cursor: pointer;
+    }
+
+    .ty-fileuploader {
+        padding: 0;
+    }
+
+    .ty-fileuploader__file-input {
+        top: -35px;
+    }
+}
+
+@media (max-width: 767px) {
+    .user-panel {
+        margin: 0 0 15px;
+    }
+}

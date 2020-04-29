@@ -1,0 +1,2 @@
+<?php
+ if (!defined('BOOTSTRAP')) { die('Access denied'); } fn_define('GOOGLE_GEOCODING_URL', 'https://maps.googleapis.com/maps/api/geocode/'); fn_define('GOOGLE_STATICMAP_URL', 'https://maps.google.com/maps/api/staticmap'); fn_define('EARTH_RADIUS_KILOMETR', 6373); fn_define('EARTH_RADIUS_MILE', 3960);

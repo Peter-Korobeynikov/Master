@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+    <id>ath_instagram_2</id>
+    <version>1.05</version>
+    <!--  2019-12-04  -->
+    <default_language>en</default_language>
+    <priority>1313</priority>
+    <has_icon>Y</has_icon>
+    
+    <authors>
+        <author>
+            <name>ThemeHills</name>
+            <email>themehills@gmail.com</email>
+            <url>https://themehills.com</url>
+        </author>
+    </authors>
+    
+    <supplier>ThemeHills</supplier>
+    <supplier_link>https://themehills.com/</supplier_link>
+    
+    <settings layout="separate" edition_type="MVE:ROOT,ULT:VENDOR">
+        <sections>
+            <section id="general">
+                <items>
+
+                    <item id="app_id">
+                        <type>input</type>
+                    </item>
+                    <item id="app_secret">
+                        <type>input</type>
+                    </item>
+
+
+                    <item id="access_token">
+                        <type>input</type>
+                    </item>
+                     <item id="fb_page_id">
+                        <type>input</type>
+                    </item>                   
+                    
+
+	                <item id="get_token">
+                        <type>template</type>
+                        <default_value>get_token.tpl</default_value>
+                    </item>
+
+                </items>
+            </section>
+            
+            <section id="settings">
+	            <items>
+                    <item id="cashe_time">
+                        <type>selectbox</type>
+                        <default_value>86400</default_value>
+                        <variants>
+                            <item id="900"></item>
+                            <item id="1800"></item>
+                            <item id="2700"></item>
+                            
+                            <item id="3600"></item>
+                            <item id="7200"></item>
+                            <item id="21600"></item>
+                            <item id="43200"></item>
+                            
+                            <item id="86400"></item>
+                            <item id="172800"></item>
+                            <item id="604800"></item>
+                            <item id="1209600"></item>
+                            <item id="2592000"></item>
+                        </variants>
+                    </item>	
+                    
+	                <item id="clear_cache">
+                        <type>template</type>
+                        <default_value>clear_cache.tpl</default_value>
+                    </item>
+                    	            
+	            </items>
+            </section>
+            
+            <section id="activation">
+				<items>
+					<item id="license">
+						<type>input</type>
+					</item>
+				</items>
+			</section>
+        </sections>
+    </settings>
+    
+    
+    <queries>
+
+        <item>DROP TABLE IF EXISTS ?:ath_instagram_2_cache;</item>
+        
+        <item>
+            CREATE TABLE `?:ath_instagram_2_cache` (
+                `json_id` mediumint(8) unsigned NOT NULL auto_increment,
+				`json_hash` varchar(33) NOT NULL default '',
+                `json_request` mediumtext NOT NULL default '',
+                `json_txt` mediumtext NOT NULL default '',
+                `timestamp_last_update` int(11) unsigned NOT NULL default '0',
+
+                PRIMARY KEY  (`json_id`),
+                UNIQUE KEY `json_hash` (`json_hash`)
+            ) Engine=MyISAM DEFAULT CHARSET UTF8;
+        </item>
+		<item editions="MULTIVENDOR">
+	        ALTER TABLE `?:companies`
+	        ADD	`instagram_2_name` varchar(255) NOT NULL default '';
+	    </item>
+	    <item editions="MULTIVENDOR">
+	        ALTER TABLE `?:vendor_plans`
+	        ADD	`instagram_2_allow` tinyint(1) NOT NULL default '1';
+	    </item>
+
+        <item for="uninstall">DROP TABLE IF EXISTS ?:ath_instagram_2_cache;</item>
+	    <item for="uninstall"  editions="MULTIVENDOR">        
+		    ALTER TABLE `?:companies`
+	        DROP `instagram_2_name`;
+	    </item>
+	    <item for="uninstall" editions="MULTIVENDOR">        
+		    ALTER TABLE `?:vendor_plans`
+	        DROP `instagram_2_allow`;
+	    </item>
+
+    </queries>
+    
+</addon>

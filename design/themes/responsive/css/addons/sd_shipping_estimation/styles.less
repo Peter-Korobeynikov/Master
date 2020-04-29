@@ -1,0 +1,244 @@
+.ty-shipping-methods-list {   
+    margin-top: 0px;
+    margin-bottom: 10px;
+    
+    th {
+        text-align: center;
+        color: #fff;
+        font-weight: normal;
+        padding: 20px 10px;
+        background: @links;
+        border: none;
+        font-size: 13px;
+    }
+    
+    td {
+        padding: 10px 18px;
+        border-color: darken(@base, 7%);
+    }
+    
+    .ty-no-image {
+        max-width: 100px;
+    }
+}
+
+.ty-shipping-methods {
+    &__transport-company {
+        font-weight: bold;
+        
+        .ty-table__responsive-content {
+            font-weight: bold;
+        }
+    }
+    
+    &__cost {
+        font-weight: bold;
+        color: @primary_button;
+        
+        &-text {
+            color: @primary_button;
+            font-weight: 600;
+        }
+    }
+}
+
+.ty-shipping-methods-list__link {
+    margin-bottom: 30px;
+    
+    &-price {
+        font-weight: bold;
+        font-size: 14px;
+    }
+    
+    a {
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    
+    &-data {
+        display: block;
+        color: darken(@base, 25%);
+        font-size: 12px;
+    }
+}
+
+.shipping-method-list-popup {
+    .ty-shipping-methods-list {
+        margin-bottom: 15px;
+    }
+    
+    &.ui-dialog {
+        .ui-dialog-titlebar {
+            border: none;
+            background: none;
+            padding: 0;
+        }
+        
+        .ui-dialog-titlebar-close {
+            margin: 0;
+            top: 8px;
+            right: 8px;
+            width: 16px;
+            height: 16px;
+            outline: none;
+        }
+        
+        .ui-button-text {
+            padding: 0;
+            line-height: 16px;
+        }
+    }
+    
+    .ui-widget-header {
+        .ui-icon-closethick {
+            margin: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            outline: none;
+        }
+    }
+    
+    .ty-no-image {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .ty-shipping-methods__transport-company-text,
+    .ty-table__responsive-header-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .shipping-method-list-popup {
+        right: 10px;
+        width: auto !important;
+        
+        .ty-no-image {
+            margin-left: 0;
+        }
+    }
+
+    .ty-shipping-methods-list{
+        .ty-table__responsive-header {
+            display: none;
+            
+            &-mobile {
+                width: 50% !important;
+            }
+        }
+        
+        .ty-shipping-methods {
+            &__image {
+                display: block;
+                padding: 0;
+            }
+            
+            &__information {
+                width: 100% !important;
+                padding: 0; 
+            }
+            
+            &__transport-company {
+                display: none;
+            }
+        }
+        
+        td {
+            border: none;
+            padding: 6px 18px;
+        }
+        
+        tr {
+            padding: 5px 0 10px 0; 
+        }
+        
+        tbody tr:nth-child(2n) {
+            background: #fff;
+        }
+    }
+    
+    .ty-shipping-methods {
+        &__image {
+            display: block;
+            padding: 0;
+            
+            & >div {
+                padding: 10px 18px;
+                width: auto;
+            }
+            
+            .ty-table__responsive-content {
+                >div {
+                    width: 49%;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+        
+        &__information {            
+            .ty-table__responsive-content {
+                width: auto;
+                padding: 10px 18px;
+            }
+        }
+        
+        &__transport-company-text {
+            font-weight: bold;
+        }
+        
+        &__transport-company-mobile {
+            font-weight: bold;
+        }
+        
+        &__cost,
+        &__estimate {            
+            &-text,
+            .ty-table__responsive-header-mobile {
+                width: 49% !important;
+                padding: 0 1% 0 0;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            
+            &-text {
+                padding: 0 0 0 1%;
+                float: right;
+            }
+            
+            .ty-table__responsive-header-mobile {
+                float: left;
+            }
+        }
+        
+        &__cost-text {
+            color: @primary_button;
+        }
+        
+        &__estimate-text,
+        &__cost-text {
+            text-align: right;
+        }
+    }
+}
+
+.shipping_loading {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    background: url("../media/images/icons/ajax_loader.svg") no-repeat center center;
+}
+
+.ty-shipping-methods-inscription {
+    margin-bottom: 7px;
+    padding-bottom: 10px;
+}
+
+.ty-my-location-link {
+    text-decoration: underline;
+    font-weight: bold;
+}

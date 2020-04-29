@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+<id>ab__hide_product_description</id>
+<version>2.3.1</version>
+<hash>7abab2da292418364bf8d91399ad50cacf83499c, 2020-04-03 09:44:08</hash>
+<priority>2016</priority>
+<position>0</position>
+<status>active</status>
+<default_language>en</default_language>
+<authors>
+<author>
+<name>AlexBranding</name>
+<email>info@alexbranding.com</email>
+<url>https://alexbranding.com</url>
+</author>
+</authors>
+<supplier>AlexBranding</supplier>
+<supplier_link>https://cs-cart.alexbranding.com</supplier_link>
+<compatibility>
+<core_version><min>4.11.2</min></core_version>
+<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+</compatibility>
+<settings edition_type="ROOT,ULT:VENDOR">
+<sections>
+<section id="settings" edition_type="ROOT,ULT:VENDOR">
+<items>
+<item id="code"><type>hidden</type><default_value>ABA-91iuZEMXJNdKf0ew116uF</default_value></item>
+<item id="build"><type>hidden</type><default_value>630</default_value></item>
+<item id="max_height"><type>text</type><default_value>250</default_value></item>
+<item id="hide_in_product">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="hide_in_category">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="hide_in_brand">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="selectors">
+<type>input</type>
+</item>
+<item id="transition">
+<type>selectbox</type>
+<default_value>10</default_value>
+<variants>
+<item id="10"></item>
+<item id="100"></item>
+<item id="200"></item>
+<item id="300"></item>
+<item id="400"></item>
+<item id="500"></item>
+<item id="600"></item>
+<item id="700"></item>
+<item id="800"></item>
+<item id="900"></item>
+<item id="1000"></item>
+<item id="1100"></item>
+<item id="1200"></item>
+<item id="1300"></item>
+<item id="1400"></item>
+<item id="1500"></item>
+</variants>
+</item>
+<item id="align">
+<type>selectbox</type>
+<default_value>left</default_value>
+<variants>
+<item id="left"></item>
+<item id="right"></item>
+<item id="center"></item>
+</variants>
+</item>
+<item id="appearance">
+<type>selectbox</type>
+<default_value>text</default_value>
+<variants>
+<item id="text"></item>
+<item id="text2"></item>
+<item id="button"></item>
+</variants>
+</item>
+<item id="show_button_after_action">
+<type>checkbox</type>
+<default_value>N</default_value>
+</item>
+<item id="custom_class">
+<type>input</type>
+<default_value>ab-smc</default_value>
+</item>
+</items>
+</section>
+</sections>
+</settings>
+<functions>
+<item for="install">fn_ab__hpd_install</item>
+</functions>
+<queries>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__hpd.data.manage', 'Y', 'ab__addons', 'ab__hide_product_description', 'N')</item>
+<item for="install">REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__hpd.data.view', 'Y', 'ab__addons', 'ab__hide_product_description', 'Y')</item>
+<item for="uninstall">DELETE FROM ?:privileges WHERE section_id = 'ab__hide_product_description' OR group_id = 'ab__hide_product_description'</item>
+</queries>
+</addon>

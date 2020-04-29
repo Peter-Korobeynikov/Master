@@ -1,0 +1,1 @@
+{script src="js/addons/ab__landing_categories/ab__lc_func.js"}

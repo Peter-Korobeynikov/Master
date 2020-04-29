@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+<id>ab__category_banners</id>
+<version>2.0.1</version>
+<hash>730a444cacfad038135e3acc46ac3b232d2c46f7, 2020-02-20 12:33:59</hash>
+<priority>2016</priority>
+<position>0</position>
+<status>active</status>
+<default_language>en</default_language>
+<authors>
+<author>
+<name>AlexBranding</name>
+<email>info@alexbranding.com</email>
+<url>https://alexbranding.com</url>
+</author>
+</authors>
+<supplier>AlexBranding</supplier>
+<supplier_link>https://cs-cart.alexbranding.com</supplier_link>
+<compatibility>
+<conflicts></conflicts>
+<dependencies></dependencies>
+<core_version><min>4.10.1</min></core_version>
+<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+</compatibility>
+<settings edition_type="ROOT,ULT:VENDOR">
+<sections>
+<section id="settings" edition_type="ROOT,ULT:VENDOR">
+<items>
+<item id="cron_key">
+<type>text</type>
+<default_value></default_value>
+</item>
+<item id="item_nth">
+<type>input</type>
+<default_value>7</default_value>
+</item>
+<item id="decrease_items_per_page">
+<type>checkbox</type>
+<default_value>Y</default_value>
+</item>
+<item id="code"><type>hidden</type><default_value>ABA-3bXsNjE7s9jqTkxK05L7B</default_value></item>
+<item id="build"><type>hidden</type><default_value>603</default_value></item>
+</items>
+</section>
+</sections>
+</settings>
+<queries>
+<item>
+CREATE TABLE IF NOT EXISTS `?:ab__category_banners` (
+`category_banner_id` mediumint(8) unsigned NOT NULL auto_increment,
+`status` char(1) NOT NULL default 'A',
+`target_blank` char(1) NOT NULL default 'Y',
+`repeat` text NOT NULL default '',
+`position` varchar(255) NOT NULL default '',
+`include_subcategories` char(1) NOT NULL default 'Y',
+`from_date` int(11) unsigned NOT NULL default '0',
+`to_date` int(11) unsigned NOT NULL default '0',
+PRIMARY KEY (`category_banner_id`),
+KEY `status` (`status`)
+) DEFAULT CHARSET UTF8;
+</item>
+<item>
+CREATE TABLE IF NOT EXISTS `?:ab__category_banner_images_and_descr` (
+`category_banner_image_id` mediumint(8) unsigned NOT NULL auto_increment,
+`category_banner_id` mediumint(8) unsigned NOT NULL default 0,
+`category_banner` varchar(255) NOT NULL default '',
+`url` varchar(255) NOT NULL default '',
+`lang_code` char(2) NOT NULL default '',
+PRIMARY KEY (`category_banner_image_id`),
+UNIQUE KEY `banner` (`category_banner_id`,`lang_code`)
+) DEFAULT CHARSET UTF8;
+</item>
+<item>
+CREATE TABLE IF NOT EXISTS `?:ab__category_banner_categories` (
+`category_banner_id` mediumint(8) unsigned NOT NULL default 0,
+`category_id` mediumint(8) unsigned NOT NULL default 0,
+PRIMARY KEY (`category_banner_id`,`category_id`)
+) DEFAULT CHARSET UTF8;
+</item>
+<item>REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__cb.data.manage', 'Y', 'ab__addons', 'ab__category_banners', 'N')</item>
+<item>REPLACE INTO ?:privileges (privilege, is_default, section_id, group_id, is_view) VALUES ('ab__cb.data.view', 'Y', 'ab__addons', 'ab__category_banners', 'Y')</item>
+<item for="uninstall">DELETE FROM ?:privileges WHERE section_id = 'ab__category_banners' OR group_id = 'ab__category_banners'</item>
+</queries>
+<functions>
+<item for="install">fn_ab__cb_install</item>
+</functions>
+</addon>

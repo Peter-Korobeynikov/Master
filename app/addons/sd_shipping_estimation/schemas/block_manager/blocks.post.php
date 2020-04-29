@@ -1,0 +1,2 @@
+<?php
+ $schema['shipping_estimation'] = array ( 'templates' => 'addons/sd_shipping_estimation/blocks/shipping_estimation.tpl', 'wrappers' => 'blocks/wrappers', ); $schema['main']['cache_overrides_by_dispatch']['products.view']['disable_cache_when'] = array('auth_handlers' => array('user_id' => array('gt', -1))); return $schema; 

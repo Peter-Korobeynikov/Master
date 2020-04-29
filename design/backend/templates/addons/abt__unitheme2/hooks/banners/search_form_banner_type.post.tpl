@@ -1,0 +1,1 @@
+<option {if $search.type == $smarty.const.ABT__UT2_BANNER_TYPE}selected="selected"{/if} value={$smarty.const.ABT__UT2_BANNER_TYPE}>{__("banner_type.`$smarty.const.ABT__UT2_BANNER_TYPE`")}</option>

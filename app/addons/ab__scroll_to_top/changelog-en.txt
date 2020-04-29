@@ -1,0 +1,20 @@
+v1.3.1 June, 11 2019
+--------------------------------------------------------------------------------
+Bug fixes:
+[!] Fixed style conflict with "AB: Hide the part of the content" add-on;
+
+
+v1.3.0 June, 3 2019
+--------------------------------------------------------------------------------
+Feature additions:
+[+] Added help;
+[+] Added Connector for future updates via the update center;
+
+
+v1.2 April, 13 2018
+--------------------------------------------------------------------------------
+Feature additions:
+[+] Added setting: Do not display the button if the input is from a mobile device;
+
+Bug fixes:
+[!] Added setting: Show button in admin panel;

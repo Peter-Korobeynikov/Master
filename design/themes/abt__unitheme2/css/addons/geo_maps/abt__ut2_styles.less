@@ -1,0 +1,120 @@
+// Geo maps & shipping
+.ty-geo-maps {
+	
+	&-shipping {
+		
+		&__wrapper {
+			margin-top: 15px;
+			margin-bottom: 10px;
+			border: 0;
+		    
+		    .ty-geo-maps__geolocation {
+
+				a {
+					white-space: nowrap;
+					padding: 10px 10px 10px 0;
+					
+					> span {
+						.ajx-link();
+						color: @links;
+						position: relative;
+						top: 2px;
+					}
+
+					.ty-icon-location-arrow {
+						font-size: @body_font_size;
+						color: @links;
+					}
+				}
+			}
+		}
+		
+		&__title {
+		    margin-top: 0;
+		    font-weight: normal;
+		}
+		
+		&__item {
+		    padding-bottom: 0;
+	    
+			.ty-icon-shipping {
+				top: 3px;
+				margin-right: 5px;
+				position: relative;
+				font-size: 14px;
+			}		
+		}
+		
+		&__label {
+			display: inline;
+			line-height: 145%;
+			color: @lighten-font;
+			margin-right: 3px;
+		}
+		
+		&__value {
+			display: inline;
+			line-height: 145%;
+		}
+		
+		&__popup {
+			margin-bottom: 0;
+		}
+	
+		&__list.ty-table {
+			margin: 10px 0 0 0;
+		}
+		
+		&__link-text {
+			
+		}
+	}
+}
+
+// Customer location
+.ty-geo-maps__geolocation {
+	padding: 0;
+	
+	.ty-icon-location-arrow {
+		color: @primary_button;
+		
+		.ut2_color() when (@top_panel_bg = @primary_button) {
+			color: contrast(@top_panel_bg, @font, white);
+		}
+		.ut2_color();
+	}
+	a {
+		padding: 8px 13px 9px 13px;
+	}
+}
+
+.ty-btn.ty-geo-maps__geolocation__set-location {
+	min-width: 100px;
+}
+
+.col-right > div:first-child > .ty-geo-maps-shipping__wrapper {
+	margin-top: 0;
+}
+
+// Motivation block include
+
+.ab__mb_item-description {
+	.ty-geo-maps {
+		&-shipping {
+			
+			&__wrapper {
+				margin-top: 0;
+			}
+			&__link * {
+				color: @links;
+			}
+			&__title {
+				font-weight: normal;
+			}
+		}
+
+		&__geolocation a * {
+			color: @links;
+		}
+	}
+}

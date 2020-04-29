@@ -1,0 +1,2 @@
+<?php
+ if (!defined('BOOTSTRAP')) { die('Access denied'); } $location_data = sd_YTA5Y2EyYzI5NzYyMDEzZDZlNWUyNjQz(); Tygh::$app['view']->assign(array( 'hide_change_location' => Tygh::$app['session']['auth']['user_id'] != 0, 'resourse' => $location_data['resourse'], 'location' => $location_data['location'], 'location_id' => $location_data['location_id'] )); 

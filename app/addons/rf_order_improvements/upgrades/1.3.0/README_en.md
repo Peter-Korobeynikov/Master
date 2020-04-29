@@ -1,0 +1,1 @@
+Customer auto-login after account creating was added.

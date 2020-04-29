@@ -1,0 +1,126 @@
+.ty-my-location__map-wrapper {
+    float: left;
+    width: 600px;
+    height: 450px;
+    margin: 10px 0 20px;
+    border: 1px solid #979797;
+
+    @media (max-width: 768px) {
+        width: 400px;
+        height: 300px;
+        width: ~"calc(100vw - 60px)";
+        height: ~"calc(100vh - 245px)";
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
+    }
+}
+
+.ty-my-location-tooltip {
+    position: absolute;
+    z-index: 500;
+    visibility: hidden;
+    margin-top: 8px;
+    opacity: 0;
+    background: @content_bg;
+    box-shadow:
+        0 8px 17px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .transition(~"visibility 0s linear 300ms, opacity 300ms");
+
+    img {
+        max-width: none;
+    }
+
+    &__controls + &__map {
+        display: none;
+    }
+}
+
+.ty-my-location {
+    position: relative;
+    display: inline-block;
+    padding: 7px 10px;
+    border-width: 0;
+
+    &__current-city {
+        display: inline-block;
+    }
+
+    &-link {
+        color: @top_panel_links;
+
+        &:hover {
+            color: @top_panel_links;
+
+            .sd-geo-icon {
+                fill: @links;
+            }
+        }
+
+        &__title {
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.pac-container {
+    z-index: 1101;
+}
+
+.gm-style-mtc {
+    div:nth-child(2) {
+        right: auto !important;
+        left: 0;
+    }
+}
+
+.gg-auto {
+    font-size: 14px;
+    min-width: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 2px;
+    text-align: center;
+    vertical-align: middle;
+
+    @media (max-width: 350px) {
+        min-width: 0;
+    }
+
+    &-buttons {
+        text-align: center;
+    }
+}
+
+.gg-right-button.ty-btn {
+    margin-left: 35px;
+}
+
+//
+// TOOLS
+.is-visible {
+    visibility: visible;
+    opacity: 1;
+    .transition(~"visibility 0s linear 0s, opacity 300ms");
+}
+
+//
+// ICON
+.sd-geo-icon {
+    fill: @top_panel_links;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: sub;
+    .transition(fill 150ms);
+}
+
+/* Adaptaton for YoupiTheme */
+// "ypi-top-panel" - is a default custom top panel class
+.ypi-top-panel .ty-my-location {
+    padding: 5px 10px;
+}
+/* Adaptaton for YoupiTheme */

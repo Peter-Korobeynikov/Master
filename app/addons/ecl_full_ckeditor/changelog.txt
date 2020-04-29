@@ -1,0 +1,8 @@
+Legend:
+[+] - new feature/improvement
+[*] - functionality changes
+[!] - bugfix
+
+Version 1.2, 4 January 2019
+
+[!] Fixed issue with Categories selector overlap

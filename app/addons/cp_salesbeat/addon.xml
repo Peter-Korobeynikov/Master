@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+    <id>cp_salesbeat</id>
+    <name>Cart-Power: Integration with Salesbeat</name>
+    <description>Integration with salesbeat.pro service.<![CDATA[ Developed by <a target="_blank" href="http://cart-power.com/">Cart-Power</a>]]></description>
+    <version>4.3.1.0</version>
+    <priority>5000</priority>
+    <position>100</position>
+    <status>active</status>
+    <default_language>en</default_language>
+    <authors>
+        <author>
+            <name>Cart-Power</name>
+            <email>sales@cart-power.com</email>
+            <url>http://cart-power.com</url>
+        </author>
+    </authors>
+    <supplier>Cart Power</supplier>
+    <supplier_link>https://cart-power.com</supplier_link>
+    <settings edition_type="ROOT,ULT:VENDOR">
+        <sections>
+            <section id="general">
+                <name>General</name>
+                <items>
+                    <item id="api_key">
+                        <type>input</type>
+                        <name>Api key</name>
+                        <tooltip>Find it in personal cabinet https://app.salesbeat.pro/#/shops/edit</tooltip>
+                        <translations>
+                            <item lang="ru">Api ключ</item>
+                            <item lang="ru" for="tooltip">Найдите в личном кабинете https://app.salesbeat.pro/#/shops/edit</item>
+                            <item lang="en">Api key</item>
+                            <item lang="en" for="tooltip">Find it in personal cabinet https://app.salesbeat.pro/#/shops/edit</item>
+                        </translations>
+                    </item>
+                    <item id="secret_token">
+                        <type>input</type>
+                        <name>Secret token</name>
+                        <tooltip>Find it in personal cabinet https://app.salesbeat.pro/#/shops/edit</tooltip>
+                        <translations>
+                            <item lang="ru">Секретный ключ</item>
+                            <item lang="ru" for="tooltip">Найдите в личном кабинете https://app.salesbeat.pro/#/shops/edit</item>
+                            <item lang="en">Secret token</item>
+                            <item lang="en" for="tooltip">Find it in personal cabinet https://app.salesbeat.pro/#/shops/edit</item>
+                        </translations>
+                    </item>
+                    <item id="cart_view">
+                        <type>selectbox</type>
+                        <name>Display in cart</name>
+                        <variants>
+                            <item id="default">
+                                <name>Default (CS-Cart)</name>
+                                <translations>
+                                    <item lang="ru">Стандартный (CS-Cart)</item>
+                                    <item lang="en">Default (CS-Cart)</item>
+                                </translations>
+                            </item>
+                            <item id="salesbeat">
+                                <name>Salesbeat</name>
+                                <translations>
+                                    <item lang="ru">Salesbeat</item>
+                                    <item lang="en">Salesbeat</item>
+                                </translations>
+                            </item>
+                        </variants>
+                        <translations>
+                            <item lang="ru">Отображение в корзине</item>
+                            <item lang="en">Display in cart</item>
+                        </translations>
+                    </item>
+                    <item id="button_color">
+                        <type>input</type>
+                        <name>Cart button color</name>
+                        <translations>
+                            <item lang="ru">Цвет кнопки в корзине</item>
+                            <item lang="en">Cart button color</item>
+                        </translations>
+                        <default_value>#4fbe31</default_value>
+                    </item>
+                    <item id="test_mode">
+                        <type>checkbox</type>
+                        <name>Test mode</name>
+                        <translations>
+                            <item lang="ru">Тестовый режим</item>
+                            <item lang="en">Test mode</item>
+                        </translations>
+                    </item>
+                </items>
+            </section>
+            <section id="fields">
+                <name>Additional fields</name>
+                <items>
+                    <item id="street">
+                        <type>selectbox</type>
+                        <name>Street</name>
+                        <tooltip>User field for street.</tooltip>
+                        <translations>
+                            <item lang="ru" for="name">Улица</item>
+                            <item lang="ru" for="tooltip">Пользовательское поле для улицы</item>
+                        </translations>
+                        <default_value></default_value>
+                    </item>
+                    <item id="house">
+                        <type>selectbox</type>
+                        <name>House</name>
+                        <tooltip>User field for house number.</tooltip>
+                        <translations>
+                            <item lang="ru" for="name">Дом</item>
+                            <item lang="ru" for="tooltip">Пользовательское поле для номера дома</item>
+                        </translations>
+                        <default_value></default_value>
+                    </item>
+                    <item id="house_block">
+                        <type>selectbox</type>
+                        <name>House Block</name>
+                        <tooltip>User field for house block number.</tooltip>
+                        <translations>
+                            <item lang="ru" for="name">Корпус</item>
+                            <item lang="ru" for="tooltip">Пользовательское поле для номера корпуса дома</item>
+                        </translations>
+                        <default_value></default_value>
+                    </item>
+                    <item id="flat">
+                        <type>selectbox</type>
+                        <name>Flat</name>
+                        <tooltip>User field for flat number.</tooltip>
+                        <translations>
+                            <item lang="ru" for="name">Квартира</item>
+                            <item lang="ru" for="tooltip">Пользовательское поле для номера квартиры</item>
+                        </translations>
+                        <default_value></default_value>
+                    </item>
+                    <item id="region">
+                        <type>selectbox</type>
+                        <name>State</name>
+                        <tooltip>User field for state.</tooltip>
+                        <translations>
+                            <item lang="ru" for="name">Регион</item>
+                            <item lang="ru" for="tooltip">Пользовательское поле для региона</item>
+                        </translations>
+                        <default_value></default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+
+    <queries>
+        <item for="install">ALTER TABLE ?:shippings ADD show_pvz varchar(1) NOT NULL default 'N';</item>
+        <item for="install">ALTER TABLE ?:shippings ADD salesbeat_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD sb_track_code varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD sb_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD city_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD pvz_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD s_city_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD s_pvz_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD s_sb_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:orders ADD courier_called varchar(1) NOT NULL default 'N';</item>
+        <item for="install">ALTER TABLE ?:products ADD sb_show_in_tab varchar(1) NOT NULL default 'Y';</item>
+        <item for="install">ALTER TABLE ?:user_profiles ADD s_city_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:user_profiles ADD s_pvz_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:user_profiles ADD s_sb_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:companies ADD city_id varchar(100) NOT NULL default '';</item>
+        <item for="install">ALTER TABLE ?:products ADD price_insurance int NOT NULL default 0;</item>
+
+
+        <item for="uninstall">ALTER TABLE ?:shippings DROP COLUMN show_pvz;</item>
+        <item for="uninstall">ALTER TABLE ?:shippings DROP COLUMN salesbeat_id;</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN sb_track_code;</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN sb_id;</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN city_id;</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN pvz_id;</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN s_city_id;</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN s_pvz_id;</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN courier_called;</item>
+        <item for="uninstall">ALTER TABLE ?:products DROP COLUMN sb_show_in_tab;</item>
+        <item for="uninstall">ALTER TABLE ?:user_profiles DROP COLUMN s_city_id;</item>
+        <item for="uninstall">ALTER TABLE ?:user_profiles DROP COLUMN s_pvz_id;</item>
+        <item for="uninstall">ALTER TABLE ?:user_profiles DROP COLUMN s_sb_id;</item>
+        <item for="uninstall">ALTER TABLE ?:companies DROP COLUMN city_id;</item>
+        <item for="uninstall">ALTER TABLE ?:products DROP COLUMN price_insurance;</item>
+    </queries>
+
+    <language_variables>
+        <item lang="en" id="cp_your_license_is_not_valid">You should enter valid License Key. Please, contact us (sales@cart-power.com), if you face any issues.</item>
+        <item lang="ru" id="cp_your_license_is_not_valid">Необходимо ввести номер лицензии. Свяжитесь с нами (sales@cart-power.com), если у вас возникли какие-либо проблемы.</item>
+        <!--
+        <item lang="en" id=""></item>
+        <item lang="ru" id=""></item>
+        -->
+        <item lang="en" id="licensekey">License Key</item>
+<item lang="en" id="cp_your_license_is_not_valid">You should enter valid License Key, please contact us (sales@cart-power.com) if you feel any problems</item>
+
+        <item lang="en" id="salesbeat_empty_settings">Salesbeat: empty add-on settings</item>
+        <item lang="ru" id="salesbeat_empty_settings">Salesbeat: не установлены обязательные настройки модуля</item>
+
+        <item lang="en" id="cp_salesbeat_delivery">Salesbeat delivery</item>
+        <item lang="ru" id="cp_salesbeat_delivery">Salesbeat служба доставки</item>
+
+        <item lang="en" id="cp_salesbeat_show_pvz">Salesbeat show PVZ map</item>
+        <item lang="ru" id="cp_salesbeat_show_pvz">Salesbeat карта пунктов самовывоза</item>
+
+        <item lang="en" id="salesbeat_manage">Salesbeat matching</item>
+        <item lang="ru" id="salesbeat_manage">Salesbeat сопоставление</item>
+
+        <item lang="en" id="export_to_salesbeat">Export to salesbeat</item>
+        <item lang="ru" id="export_to_salesbeat">Выгрузить в Salesbeat</item>
+
+        <item lang="en" id="call_courier">Call courier</item>
+        <item lang="ru" id="call_courier">Вызвать курьера</item>
+
+        <item lang="en" id="exported_to_salesbeat">was exported to Salesbeat</item>
+        <item lang="ru" id="exported_to_salesbeat">был выгружен в Salesbeat</item>
+
+        <item lang="en" id="courier_called">Courier was called to pick order</item>
+        <item lang="ru" id="courier_called">Курьер был вызван для забора заказа</item>
+
+
+        <item lang="en" id="sb_export_first">should be exported first to Salesbeat</item>
+        <item lang="ru" id="sb_export_first">должен быть сначала выгружен в Salesbeat</item>
+
+        <item lang="en" id="salesbeat_info">Shipping info</item>
+        <item lang="ru" id="salesbeat_info">Информация о доставке</item>
+
+        <item lang="en" id="sb_in_tab">Show information in tab</item>
+        <item lang="ru" id="sb_in_tab">Показывать информацию на отдельной вкладке</item>
+
+        <item lang="en" id="salesbeat">Salesbeat</item>
+        <item lang="ru" id="salesbeat">Salesbeat</item>
+
+        <item lang="en" id="cp_street">Street</item>
+        <item lang="ru" id="cp_street">Улица</item>
+
+        <item lang="en" id="cp_house">House</item>
+        <item lang="ru" id="cp_house">Дом</item>
+
+        <item lang="en" id="cp_flat">Flat</item>
+        <item lang="ru" id="cp_flat">Квартира</item>
+
+        <item lang="en" id="salesbeat_shipping_not_found">Salesbat shipping not found</item>
+        <item lang="ru" id="salesbeat_shipping_not_found">Salesbeat метод доставки не найден</item>
+
+        <item lang="en" id="salesbeat_shipping_changed">Shipping method was changed</item>
+        <item lang="ru" id="salesbeat_shipping_changed">Метод доставки был изменен</item>
+
+        <item lang="en" id="sb_recipient_city_error">Recipient city not found</item>
+        <item lang="ru" id="sb_recipient_city_error">Город получателя не найден</item>
+
+        <item lang="en" id="sb_sender_city_error">Sender city not found</item>
+        <item lang="ru" id="sb_sender_city_error">Город отправителя не найден</item>
+
+        <item lang="en" id="sb_price_insurance">Price insurance</item>
+        <item lang="ru" id="sb_price_insurance">Cтоимость для страховки</item>
+
+        <item lang="en" id="sb_courier_called">Courier called for pick up order</item>
+        <item lang="ru" id="sb_courier_called">Курьер вызван для забора заказа</item>
+
+        <item lang="en" id="sb_courier_already_called">Courier already called for pick up order</item>
+        <item lang="ru" id="sb_courier_already_called">Курьер уже вызван для забора заказа</item>
+
+        <item lang="en" id="sb_call_couriers">Call couriers</item>
+        <item lang="ru" id="sb_call_couriers">Вызвать курьеров</item>
+
+        <item lang="en" id="sb_pvz_changed">Pvz was changed</item>
+        <item lang="ru" id="sb_pvz_changed">ПВЗ был изменен</item>
+
+    </language_variables>
+
+    <translations> 
+        <item for="name" lang="ru">Cart-Power: Salesbeat</item>
+        <item for="description" lang="ru">Integration with salesbeat.pro service.<![CDATA[ Разработано <a target="_blank" href="http://cart-power.com/">Cart-Power</a>]]></item>
+    </translations>
+    
+    <!--   
+    <functions>
+        <item for="install"></item>
+        <item for="uninstall"></item>
+    </functions>
+     -->
+</addon>

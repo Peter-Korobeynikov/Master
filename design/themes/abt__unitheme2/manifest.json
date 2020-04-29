@@ -1,0 +1,43 @@
+{
+    "title": "AB: UniTheme2",
+    "description": "AB: UniTheme2",
+    "logo": "media/images/logos/Black/logo.png",
+    "mail": "media/images/logos/Black/mail.png",
+    "developer": "Alexbranding",
+    "favicon": "media/images/logos/Black/favicon.png",
+    "parent_theme": "responsive",
+    "ab": {
+        "version": "4.11.3.b",
+        "date": "2019-02-14"
+    },
+    "settings_overrides": {
+        "General": {
+            "inventory_tracking": true,
+            "enable_compare_products": true
+        },
+        "Appearance": {
+            "columns_in_products_list": 3,
+            "thumbnails_gallery": false,
+            "quantity_changer": true,
+            "top_pagination": false,
+            "product_details_in_tab": true,
+            "enable_quick_view": true
+        },
+        "Thumbnails": {
+            "product_lists_thumbnail_width": 270,
+            "product_lists_thumbnail_height": 270,
+            "product_details_thumbnail_width": 550,
+            "product_details_thumbnail_height": 450,
+            "product_quick_view_thumbnail_width": 270,
+            "product_quick_view_thumbnail_height": 270,
+            "product_cart_thumbnail_width": 150,
+            "product_cart_thumbnail_height": 150,
+            "category_lists_thumbnail_width": 150,
+            "category_lists_thumbnail_height": 150,
+            "category_details_thumbnail_width": 120,
+            "category_details_thumbnail_height": "",
+            "category_detailed_image_width": 270,
+            "category_detailed_image_height": 380
+        }
+    }
+}

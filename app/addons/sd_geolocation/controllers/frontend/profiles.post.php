@@ -1,0 +1,2 @@
+<?php
+ use Tygh\Registry; if (!defined('BOOTSTRAP')) { die('Access denied'); } if ($_SERVER['REQUEST_METHOD'] == 'POST') { return array(CONTROLLER_STATUS_OK); } if ($mode == 'add') { if (Registry::get('settings.General.quick_registration') != 'Y') { $user_data = Tygh::$app['view']->getTemplateVars('user_data'); if (sd_YzE5ZWI5OWI1NDUzZmQ1Nzk0NjQ3MWI2($user_data)) { Tygh::$app['view']->assign('user_data', $user_data); } } } 

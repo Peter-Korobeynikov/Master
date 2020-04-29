@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>facebook_store</id>
+    <version>1.0</version>
+    <priority>1</priority>
+    <position>45</position>
+    <status>active</status>
+    <default_language>en</default_language>
+    <settings edition_type="ROOT,ULT:VENDOR">
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="app_id">
+                        <type>input</type>
+                    </item>
+                    <item id="page_id">
+                        <type>input</type>
+                    </item>
+                    <item id="layout_id">
+                        <type>selectbox</type>
+                    </item>
+                    <item id="tab_url">
+                        <type>template</type>
+                        <default_value>tab_url.tpl</default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+</addon>

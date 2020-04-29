@@ -1,0 +1,1 @@
+{style src="addons/powerfull_owl_free/styles.less"}

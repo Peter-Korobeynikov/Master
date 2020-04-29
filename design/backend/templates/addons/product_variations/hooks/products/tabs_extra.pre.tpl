@@ -1,0 +1,1 @@
+<div class="cm-hide-save-button hidden {if $is_form_readonly}cm-hide-inputs{/if}" id="content_variations"></div>
