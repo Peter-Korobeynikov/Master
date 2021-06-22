@@ -37,7 +37,7 @@
     "require": {
         "educoder/pest": "1.0.0",
         "robmorgan/phinx": "0.4.3",
-        "phpmailer/phpmailer": "5.2.*",
+        "phpmailer/phpmailer": "6.5.*",
         "ezyang/htmlpurifier": "4.6.*",
         "tedivm/jshrink": "~1.0",
         "imagine/imagine": "^1.2.2",
