@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aed90b456176d929d89ae234cafbe0ab",
+    "content-hash": "209a5ae644b1b95a0ab405c3ef42fbe1",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1060,14 +1060,18 @@
         },
         {
             "name": "smarty/smarty",
-            "version": "v3.1.21.1",
+            "version": "v3.1.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cscart/smarty.git",
-                "reference": "5fc026372d47942c7f4af6c9492ed65a7bdd1eff"
+                "reference": "99085d8dc65eeb5e55ae3cba74d3dc6b3bb0205e"
             },
             "require": {
                 "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5 || ^6.5 || ^5.7 || ^4.8",
+                "smarty/smarty-lexer": "^3.1"
             },
             "type": "library",
             "extra": {
@@ -1077,9 +1081,7 @@
             },
             "autoload": {
                 "classmap": [
-                    "libs/Smarty.class.php",
-                    "libs/SmartyBC.class.php",
-                    "libs/sysplugins/smarty_security.php"
+                    "libs/"
                 ]
             },
             "license": [
@@ -1106,10 +1108,10 @@
             ],
             "support": {
                 "irc": "irc://irc.freenode.org/smarty",
-                "issues": "http://code.google.com/p/smarty-php/issues/list",
+                "issues": "https://github.com/smarty-php/smarty/issues",
                 "forum": "http://www.smarty.net/forums/"
             },
-            "time": "2018-01-10T10:37:22+00:00"
+            "time": "2022-01-17T23:12:04+00:00"
         },
         {
             "name": "stripe/stripe-php",
@@ -3508,5 +3510,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "5.6.1"
-    }
+    },
+    "plugin-api-version": "2.3.0"
 }
